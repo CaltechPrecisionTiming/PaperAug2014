@@ -3,23 +3,24 @@
 \usepackage[hmargin=1.5cm,vmargin=1.5cm]{geometry}
 
 \usepackage[affil-it]{authblk}
+\usepackage[percent]{overpic}
 
-\usepackage{ifpdf}
-\ifpdf 
-    \usepackage[pdftex]{graphicx}   % to include graphics
-    \pdfcompresslevel=9 
-    \usepackage[pdftex,     % sets up hyperref to use pdftex driver
-            plainpages=false,   % allows page i and 1 to exist in the same document
-            breaklinks=true,    % link texts can be broken at the end of line
-            colorlinks=true,
-            pdftitle=My Document
-            pdfauthor=My Good Self
-           ]{hyperref} 
-    \usepackage{thumbpdf}
-\else 
-    \usepackage{graphicx}       % to include graphics
-    \usepackage{hyperref}       % to simplify the use of \href
-\fi 
+%\usepackage{ifpdf}
+%\ifpdf 
+%    \usepackage[pdftex]{graphicx}   % to include graphics
+%    \pdfcompresslevel=9 
+%    \usepackage[pdftex,     % sets up hyperref to use pdftex driver
+%            plainpages=false,   % allows page i and 1 to exist in the same document
+%            breaklinks=true,    % link texts can be broken at the end of line
+%            colorlinks=true,
+%            pdftitle=My Document
+%            pdfauthor=My Good Self
+%           ]{hyperref} 
+%    \usepackage{thumbpdf}
+%\else 
+%    \usepackage{graphicx}       % to include graphics
+%    \usepackage{hyperref}       % to simplify the use of \href
+%\fi 
 
 \title{Fast Timing Sexy Title}
 
@@ -55,6 +56,11 @@ future high-energy physics experiments are discussed. }
 
 
 \section{Introduction}
+%shorten the LHC discussion to 1 paragraph
+%put the TOF cartoon diagram here and discuss the various aspects affects TOF resolution
+% say that we have studied 1,4,5 already, and now we focus on 2 and 3 to complete the story.
+% briefly introduce the experiments that we did to understand 2 and 3 ( sampling calo with LYSO cube, shashlik with fibers, shashlik with side readout)
+
 Current and future high energy physics particle colliders are capable to provide
 instantaneous luminosities of 10$^{34}$ cm$^{-2}$s$^{-1}$ and above. The high
 centre of mass energy, the large number of simultaneous collision of beam
@@ -219,12 +225,148 @@ properties. Future experiments will be carried out to study all these factors in
 detail.
 
 \section{Event Selection and Analysis}
+To assign a time stamp for each signal
+pulse, we use different procedures for the reference detector and for the one
+with LYSO crystal, since their pulses have different shapes. The pulse from the
+reference detector is a very sharp and symmetric around its maximum amplitude,
+as shown in Figure~\ref{fig:PulseShapes}. Therefore, for the reference detector
+the assignment of a time stamp is the following. We first determine the time
+position of the pulse peak. A Gaussian function is fitted to the pulse maximum
+using three points before the maximum of the pulse peak and four points after
+the maximum. The mean value of the Gaussian fitted function was used as the time
+stamp for each pulse. A time stamp for the scintillation light is assigned using
+constant fraction fit on the rising edge. We perform a fit with a linear
+function between the points at 20\% and 70\% of the maximum of the pulse peak,
+and the time stamp is assigned as the midpoint of the fitted function. Examples of fits performed to assign a time stamp from each pulse are shown in Figure~\ref{fig:PulseFits}.
 
-\section{Time of Flight Resolution}
+\begin{figure}[h] \centering
+\includegraphics[width=0.45\textwidth]{figs/RefPulse} 
+\includegraphics[width=0.45\textwidth]{figs/ScintPulse} 
+\caption{Sample pulses as digitized by the DRS4 board. (Left) is a  pulse from the reference Photek 240, and (right) is a  pulse from 1.7 cm$^3$ LYSO crystal, from an 8 GeV electron run.} 
+\label{fig:PulseShapes}
+\end{figure}
 
-\section{Event Selection and Analysis}
+Event selection and pulse cleaning procedure was used to eliminate abnormal
+pulses in the readout. Large signals above 500 mV were also rejected because
+they saturated the DRS4 inputs. Pulses with an irregular peak profile were
+rejected, as well as pulses which experienced a sudden reversal of polarity that
+is occasionally observed with our readout. We selected the pulses with amplitude
+larger than 20 mV for future analysis. Events containing more than one pulse
+within our readout window of 200 ns were not used. 
+
+\begin{figure}[h] \centering
+\includegraphics[width=0.45\textwidth]{figs/RefPulseFit} 
+\includegraphics[width=0.45\textwidth]{figs/ScintPulseFit} 
+\caption{Sample fits to assign a time stamp to the each pulse. (Left) is a  pulse from the reference Photek 240, and (right) is a  pulse from 1.7 cm$^3$ LYSO crystal, from an 8 GeV electron run.} 
+\label{fig:PulseFits}
+\end{figure}
+
+
+\section{Time of Flight in a Crystal-based Sampling Calorimeter}
 
 \subsection{Sampling Calorimeter Setup}
+
+
+In this section we report results of the
+measurements of the time-of-flight (TOF) resolution performed in different
+geometric setups. We studied TOF resolution extracted with crystals of various
+sizes, with the goal to understand the impact of transit time jitter with
+differing sizes of scintillating medium. Additionally, we report our
+measurements with a LYSO/W Shashlik cell configuration, which is one of the
+calorimeter designs that is being considered for CMS HL-LHC upgrades. In all the
+measurements the signal of the first Photek 240 was always used as ``start''.
+The signal of the ``stop'' counter was taken from the second in line MCP-PMT,
+connected to the LYSO crystal. In all cases with electron beams we require that
+the Cherenkov counters located upstream have a signal constant with that of an
+electron. 
+
+First we measured the TOF resolution of a 1.7 cm$^3$ LYSO crystal shown in the
+setup in Figure~\ref{fig:SetupLYSO}. The TOF is measured with respect to the
+reference detector. The crystal is mounted on the face of the Photek 240 through
+optical grease, and is wrapped in Tyvek. To ensure that the events selected for
+analysis are indeed from showering electrons, we require that all events contain
+large signals in the downstream Hamamatsu R3809 detector. As it is shown in
+Figure~\ref{fig:SetupLYSO}, we place lead bricks in front of the Photek 240
+mounted on the LYSO crystal. This is done to ensure that the scintillation light
+signal is not contaminated by the fast rising edge of the light produced in the
+entry window of the MCP-PMT, thus prohibiting direct passage of beam particles
+through the MCP entry window. As a cross-check, we also collected data in
+dedicated runs when the Photek 240 was replaced by a XP2020 PMTs, and found that
+the pulse shapes looked identical to those from Photek, indicating that the
+pulse shape is dominated by the scintillation light, and not by secondary
+particles from the shower. The TOF resolutions we obtained are shown in
+Figure~\ref{fig:ResolSmallXtal}, and are found to be in the range of 28-30~ps
+for the energy range shown. The trigger size of 2~mm will cause geometric spread
+of the mean shower position, and future tests are planned to be performed with a
+smaller area trigger counters.
+
+
+\begin{figure}[h] 
+\centering
+%\includegraphics[width=0.32\textwidth]{figs/Resol8GeVele} 
+%\includegraphics[width=0.32\textwidth]{figs/Resol16GeVele} 
+%\includegraphics[width=0.32\textwidth]{figs/Resol32GeVele} 
+%\begin{overpic}[width=0.32\textwidth,grid,tics=10]{figs/Resol16GeVele}\put (20,50) {$\gamma$}\end{overpic}
+\begin{overpic}[width=0.32\textwidth]{figs/Resol8GeVele}\put (14,52) {\footnotesize$\sigma=34$~ps}\end{overpic}
+\begin{overpic}[width=0.32\textwidth]{figs/Resol16GeVele}\put (14,52) {\footnotesize$\sigma=28$~ps}\end{overpic}
+\begin{overpic}[width=0.32\textwidth]{figs/Resol32GeVele}\put (14,52) {\footnotesize$\sigma=28$~ps}\end{overpic}
+\caption{Time of flight results for the 1.7 cm$^3$ LYSO crystal. The results show the time difference between the reference Photek 240 and the signal extracted from the Photek 240 attached to the crystal. Results are shown for 8 GeV (left), 16 GeV (center), and 32 GeV electron beam runs. Standard deviation of the Gauss fit is overlaid on each figure.}
+\label{fig:ResolSmallXtal}
+\end{figure}
+
+Next we perform measurements with a smaller size LYSO crystals, which target
+characterization of the timing properties that can be applied to a Shashlik
+design LYSO/W sampling calorimeter which is considered for CMS HL-LHC upgrade. A
+key feature of LYSO is its high light yield. This makes a sampling calorimeter
+with LYSO as active medium a feasible design. Even with a sampling fraction of
+around 0.1 and a readout of the LYSO plates via fibers the effective light yield
+for high energy showers is still be large enough to achieve an acceptable
+stochastic term in the energy resolution. The CMS collaboration at LHC is
+currently studying the feasibility of a sampling calorimeter with LYSO as active
+medium and tungsten as absorber. The results we presented above indicate that
+the achievable time resolution for high energy particles in a large LYSO crystal
+is significantly impacted by the optical transit time jitter. Shower
+fluctuations and photo statistics on the other hand are less relevant for
+multi-GeV electromagnetic showers. We carried out an initial
+test with a LYSO plate of 14 mm x 14 mm size and 1.5 mm thickness.  As shown in Figure~\ref{fig:ShashlikTile} we
+read out a single such LYSO plate by bringing one of the sides of the plate into
+contact with the MCP window. We then exposed the LYSO plate to electron and
+proton beams.
+
+\begin{figure}[h] \centering
+\includegraphics[width=0.45\textwidth]{figs/ShashlikTile} 
+\caption{Setup for the test measurement of a single LYSO plate. The plate dimensions are 14 mm x 14 mm x 1.5 mm. It is mounted in a plastic holder which fixes the scintillator plate against the window of the MCP.} 
+\label{fig:ShashlikTile}
+\end{figure}
+
+Results from the initial tests suggest that the rise time observed on the pulses
+from the LYSO plate is not significantly different from the one observed on
+larger LYSO crystals. We were able to extract time resolutions on the order of
+50 ps with respect to the reference MCP detector, however with our initial setup it was
+not possible to control the shower position on the LYSO plate very well. Also,
+the signal from the MCP may have contributions from shower particles hitting the
+sensor directly. Future tests with a refined setup will allow to disentangle the
+contribution of the signal from direct hits and from scintillation light. 
+
+We also tested timing characteristics of a Shashlik design cell, which consists
+of LYSO tiles described above, stacked with tungsten absorber plates of
+approximately 2.5 mm thickness, shown in Figure~\ref{fig:ShashlikCell}. The
+fibers in the Shashlik structure were Kuraray 1.2mm non-S type, fluor (Y-11)
+concentration of 300ppm. We tested two options for extracting time information
+from scintillation light inside the Shashlik cell: reading out the light through
+wavelength-shifting fibers; and in another setup reading out a single tile with
+Hamamatsu R3809 directly mounted on it. The best TOF resolution was obtained
+when reading out a single tile optically coupled to the Hamamatsu MCP-PMT, in
+which case we obtained around 60 ps resolution, as shown in
+Figure~\ref{fig:ShashlikCell}.
+
+\begin{figure}[h] \centering
+\includegraphics[width=0.32\textwidth]{figs/ShashlikSetup} 
+\includegraphics[width=0.32\textwidth]{figs/ShashlikEnergy} 
+\begin{overpic}[width=0.32\textwidth]{figs/ShashlikResol}\put (14,72) {\footnotesize$\sigma=60$~ps}\end{overpic}
+\caption{Setup for the test measurement of a LYSO/W Shashlik cell. (Left) fibers optically coupled to Hamamatsu R3809 MCP. (Center) the distribution of signal amplitudes in a sample of events collected in an 8 GeV electron run, light is collected through fibers. (Right) time difference between the reference Photek 240 and the signal extracted from  Hamamatsu R3809 attached to a single LYSO tile, 8 GeV electron beam.} 
+\label{fig:ShashlikCell}
+\end{figure}
 
 \subsection{LYSO/W Shashlik Calorimeter Setup}
 
