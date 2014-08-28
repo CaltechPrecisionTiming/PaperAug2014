@@ -516,8 +516,43 @@ of the exposed edges of the LYSO layers and the full experimental setup is shown
 \label{fig:ShashlikSideReadoutSetup}
 \end{figure}
 
+With the intention to study the relationship between the impact of the 
+optical transit time jitter and the impact of limited photostatitics,
+we minimize the distance that the scintillation light
+must travel to reach the photodetector in this setup and thereby minimize the
+impact of optical transit on the time resolution, but reduce the photostatistics 
+as we collect light from only a fraction of the edges of two LYSO layers. 
+In Figure~\ref{fig:ShashlikSideReadoutTOF}, we show the 
+time of flight distributions for electron beams at various energies, 
+fitted to gaussian functions. The resulting
+$\sigma$ parameter of the gaussian is plotted as a function of the
+beam energy in Figure~\ref{fig:ShashlikSideReadoutTOFResolutionVsEnergy}.
+The best time of flight resolution that we obtain is about $55$~ps, and
+fitting the result to the sum of a $1/\sqrt{E}$ term and a constant term
+we find a constant term of about $30$~ps with an uncertainty of $30\%$. 
 
+\begin{figure}[h] \centering
+\includegraphics[width=0.45\textwidth]{figs/ShashlikSideReadoutTOF8GeV} 
+\includegraphics[width=0.45\textwidth]{figs/ShashlikSideReadoutTOF16GeV} 
+\includegraphics[width=0.45\textwidth]{figs/ShashlikSideReadoutTOF32GeV} 
+\caption{ Time of flight distributions for the LYSO-tungsten shashlik calorimeter
+with signal extracted from the edges of two LYSO layers. } 
+\label{fig:ShashlikSideReadoutTOF}
+\end{figure}
 
+\begin{figure}[h] \centering
+\includegraphics[width=0.45\textwidth]{figs/ShashlikSideReadoutTOFResolutionVsEnergy} 
+\caption{ The time of flight resolution is plotted as a function of
+the electron beam energy, and fitted to the sum of a $1/\sqrt{E}$ term and a constant term. }
+\label{fig:ShashlikSideReadoutTOFResolutionVsEnergy}
+\end{figure}
+
+In summary, we find that removing the impact of the wavelength shifting mechanism
+and minimizing the impact of the optical transit does indeed improve the time
+of flight resolution, but at a cost in photostatistics. Results obtained in this
+experiment suggest that the LYSO-tungsten shashlik calorimeter with edge
+signal readout design can likely achieve a $30$~ps resolution provided 
+some improvement to light collection is achieved.
 
 \section{Summary}
 
