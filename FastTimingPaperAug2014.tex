@@ -262,7 +262,7 @@ within our readout window of 200 ns were not used.
 \end{figure}
 
 
-\section{Time of Flight in a Crystal-based Sampling Calorimeter}
+\section{Time of Flight in LYSO Crystal-based Calorimeters}
 
 As we discussed in the introduction, this article describes studies
 focused on the characterization of two of the five main aspects
@@ -290,107 +290,106 @@ LYSO layers.
 
 \subsection{Studies of Time Jitter from Scintillation}
 
-
-In this section we report results of the
-measurements of the time-of-flight (TOF) resolution performed in different
-geometric setups. We studied TOF resolution extracted with crystals of various
-sizes, with the goal to understand the impact of transit time jitter with
-differing sizes of scintillating medium. Additionally, we report our
-measurements with a LYSO/W Shashlik cell configuration, which is one of the
-calorimeter designs that is being considered for CMS HL-LHC upgrades. In all the
-measurements the signal of the first Photek 240 was always used as ``start''.
-The signal of the ``stop'' counter was taken from the second in line MCP-PMT,
-connected to the LYSO crystal. In all cases with electron beams we require that
-the Cherenkov counters located upstream have a signal constant with that of an
-electron. 
-
-First we measured the TOF resolution of a 1.7 cm$^3$ LYSO crystal shown in the
-setup in Figure~\ref{fig:SetupLYSO}. The TOF is measured with respect to the
-reference detector. The crystal is mounted on the face of the Photek 240 through
-optical grease, and is wrapped in Tyvek. To ensure that the events selected for
-analysis are indeed from showering electrons, we require that all events contain
-large signals in the downstream Hamamatsu R3809 detector. As it is shown in
-Figure~\ref{fig:SetupLYSO}, we place lead bricks in front of the Photek 240
-mounted on the LYSO crystal. This is done to ensure that the scintillation light
-signal is not contaminated by the fast rising edge of the light produced in the
-entry window of the MCP-PMT, thus prohibiting direct passage of beam particles
-through the MCP entry window. As a cross-check, we also collected data in
-dedicated runs when the Photek 240 was replaced by a XP2020 PMTs, and found that
-the pulse shapes looked identical to those from Photek, indicating that the
-pulse shape is dominated by the scintillation light, and not by secondary
-particles from the shower. The TOF resolutions we obtained are shown in
-Figure~\ref{fig:ResolSmallXtal}, and are found to be in the range of 28-30~ps
-for the energy range shown. The trigger size of 2~mm will cause geometric spread
-of the mean shower position, and future tests are planned to be performed with a
-smaller area trigger counters.
-
-
-\begin{figure}[h] 
-\centering
-%\includegraphics[width=0.32\textwidth]{figs/Resol8GeVele} 
-%\includegraphics[width=0.32\textwidth]{figs/Resol16GeVele} 
-%\includegraphics[width=0.32\textwidth]{figs/Resol32GeVele} 
-%\begin{overpic}[width=0.32\textwidth,grid,tics=10]{figs/Resol16GeVele}\put (20,50) {$\gamma$}\end{overpic}
-\begin{overpic}[width=0.32\textwidth]{figs/Resol8GeVele}\put (14,52) {\footnotesize$\sigma=34$~ps}\end{overpic}
-\begin{overpic}[width=0.32\textwidth]{figs/Resol16GeVele}\put (14,52) {\footnotesize$\sigma=28$~ps}\end{overpic}
-\begin{overpic}[width=0.32\textwidth]{figs/Resol32GeVele}\put (14,52) {\footnotesize$\sigma=28$~ps}\end{overpic}
-\caption{Time of flight results for the 1.7 cm$^3$ LYSO crystal. The results show the time difference between the reference Photek 240 and the signal extracted from the Photek 240 attached to the crystal. Results are shown for 8 GeV (left), 16 GeV (center), and 32 GeV electron beam runs. Standard deviation of the Gauss fit is overlaid on each figure.}
-\label{fig:ResolSmallXtal}
-\end{figure}
-
-Next we perform measurements with a smaller size LYSO crystals, which target
-characterization of the timing properties that can be applied to a Shashlik
-design LYSO/W sampling calorimeter which is considered for CMS HL-LHC upgrade. A
-key feature of LYSO is its high light yield. This makes a sampling calorimeter
-with LYSO as active medium a feasible design. Even with a sampling fraction of
-around 0.1 and a readout of the LYSO plates via fibers the effective light yield
-for high energy showers is still be large enough to achieve an acceptable
-stochastic term in the energy resolution. The CMS collaboration at LHC is
-currently studying the feasibility of a sampling calorimeter with LYSO as active
-medium and tungsten as absorber. The results we presented above indicate that
-the achievable time resolution for high energy particles in a large LYSO crystal
-is significantly impacted by the optical transit time jitter. Shower
-fluctuations and photo statistics on the other hand are less relevant for
-multi-GeV electromagnetic showers. We carried out an initial
-test with a LYSO plate of 14 mm x 14 mm size and 1.5 mm thickness.  As shown in Figure~\ref{fig:ShashlikTile} we
-read out a single such LYSO plate by bringing one of the sides of the plate into
-contact with the MCP window. We then exposed the LYSO plate to electron and
-proton beams.
+We study the impact of the scintillation mechanism in LYSO
+on the time of flight resolution using a simple 
+sampling calorimeter composed of a layer of
+lead, about $4.5$ radiation lengths in thickness, acting
+as a radiator and a LYSO crystal cube with linear dimensions 
+of $1.7$~cm. The LYSO crystal is wrapped in Tyvek and  
+coupled with optical grease to a Hamamatsu R3809 MCP-PMT
+which is used to extract the scintillation photon signal. 
+A Photek 240 MCP is placed upstream of the calorimeter and 
+is used to measure the reference time. A schematic diagram
+and a photograph of the experimental setup
+is shown in Figure~\ref{fig:LYSOSamplingCaloSetup}. 
+The contribution of optical transit effects on the 
+time of flight resolution is minimized as the linear
+dimensions of the cube is relatively small.
 
 \begin{figure}[h] \centering
-\includegraphics[width=0.45\textwidth]{figs/ShashlikTile} 
-\caption{Setup for the test measurement of a single LYSO plate. The plate dimensions are 14 mm x 14 mm x 1.5 mm. It is mounted in a plastic holder which fixes the scintillator plate against the window of the MCP.} 
-\label{fig:ShashlikTile}
+\includegraphics[width=0.45\textwidth]{figs/LYSOSamplingCaloSetupSchematic} 
+\includegraphics[width=0.45\textwidth]{figs/LYSOSamplingCaloSetupPhoto} 
+\caption{ A schematic diagram of the experimental setup for the
+time of flight measurement using the LYSO sampling calorimeter
+is shown, along with a photograph of the experimental setup. } 
+\label{fig:LYSOSamplingCaloSetup}
 \end{figure}
 
-Results from the initial tests suggest that the rise time observed on the pulses
-from the LYSO plate is not significantly different from the one observed on
-larger LYSO crystals. We were able to extract time resolutions on the order of
-50 ps with respect to the reference MCP detector, however with our initial setup it was
-not possible to control the shower position on the LYSO plate very well. Also,
-the signal from the MCP may have contributions from shower particles hitting the
-sensor directly. Future tests with a refined setup will allow to disentangle the
-contribution of the signal from direct hits and from scintillation light. 
+A plastic scintillator, approximately $2$~mm by $2$~mm in cross sectional area
+and placed upstream of the reference time detector, is used to trigger
+the DAQ readout on the DRS waveform digitizer and ensures that any
+time of flight measurement is constrained to within a $2$~mm region,
+which limits the time jitter due to the geometry to about $12$~ps. 
+Electron events were identified by requiring a signal with amplitude
+larger than $10$~mV in the Cherenkov counter.
+Finally, large lead bricks are placed upstream of the Hamamatsu
+R3809 MCP-PMT but out of the beam to provide shielding of the photodetector
+from stray particles produced from events where an electromagnetic shower
+occurs elsewhere upstream of the lead radiator. Such stray shower
+events yield very fast signals which can significantly contaminate the
+scintillation signal if uncontrolled. Using the identical
+experimental setup but without the LYSO active element in place,
+we found that stray shower type events yield less than $10\%$ contamination
+and gives a negligible effect on the scintillation signal. The same calorimeter
+setup using the Photek 240 MCP in place of the Hamamatsu R3809 MCP-PMT,
+which has an active area about $10$ times larger, was found to yield 
+more than $80\%$ contamination and thus did not result in a proper
+measurements of the scintillation signal.
 
-We also tested timing characteristics of a Shashlik design cell, which consists
-of LYSO tiles described above, stacked with tungsten absorber plates of
-approximately 2.5 mm thickness, shown in Figure~\ref{fig:ShashlikCell}. The
-fibers in the Shashlik structure were Kuraray 1.2mm non-S type, fluor (Y-11)
-concentration of 300ppm. We tested two options for extracting time information
-from scintillation light inside the Shashlik cell: reading out the light through
-wavelength-shifting fibers; and in another setup reading out a single tile with
-Hamamatsu R3809 directly mounted on it. The best TOF resolution was obtained
-when reading out a single tile optically coupled to the Hamamatsu MCP-PMT, in
-which case we obtained around 60 ps resolution, as shown in
-Figure~\ref{fig:ShashlikCell}.
+Despite the thickness of the LYSO active element layer being relatively
+small and therefore only capturing a fraction of the total energy
+of the electron, the location of the active element is relatively close to the
+shower maximum for electromagnetic showers, and yields
+a reasonable energy measurement. In Figure~\ref{fig:LYSOCubeEnergy32GeV}
+we show the distribution of the pulse integral for events
+measured by this sampling calorimeter produced with a
+$32$~GeV electron beam, and find a resolution of about $20\%$.
+
 
 \begin{figure}[h] \centering
-\includegraphics[width=0.32\textwidth]{figs/ShashlikSetup} 
-\includegraphics[width=0.32\textwidth]{figs/ShashlikEnergy} 
-\begin{overpic}[width=0.32\textwidth]{figs/ShashlikResol}\put (14,72) {\footnotesize$\sigma=60$~ps}\end{overpic}
-\caption{Setup for the test measurement of a LYSO/W Shashlik cell. (Left) fibers optically coupled to Hamamatsu R3809 MCP. (Center) the distribution of signal amplitudes in a sample of events collected in an 8 GeV electron run, light is collected through fibers. (Right) time difference between the reference Photek 240 and the signal extracted from  Hamamatsu R3809 attached to a single LYSO tile, 8 GeV electron beam.} 
-\label{fig:ShashlikCell}
+\includegraphics[width=0.45\textwidth]{figs/TOF_LYSOCube_Electron_32GeV_energy} 
+\caption{ Histogram of the pulse integral for events recorded using
+the LYSO cube sampling calorimeter for a $32$~GeV electron beam. } 
+\label{fig:LYSOCubeEnergy32GeV}
 \end{figure}
+
+The time of flight measurement was performed using the LYSO sampling calorimeter
+for electron beams with energies varying from $4$~GeV to $32$~GeV. The 
+measured time of flight distributions are shown in Figure~\ref{{fig:LYSOCubeTOF}.
+We achieve the best time of flight resolution of $34$~ps for electrons
+with beam energy of $32$~GeV.
+
+\begin{figure}[h] \centering
+\includegraphics[width=0.45\textwidth]{figs/TOF_LYSOCube_Electron_4GeV} 
+\includegraphics[width=0.45\textwidth]{figs/TOF_LYSOCube_Electron_8GeV} 
+\includegraphics[width=0.45\textwidth]{figs/TOF_LYSOCube_Electron_16GeV} 
+\includegraphics[width=0.45\textwidth]{figs/TOF_LYSOCube_Electron_32GeV} 
+\caption{ Time of flight distributions for the LYSO cube sampling calorimeter
+for electron beams with varying beam energies. } 
+\label{fig:LYSOCubeTOF}
+\end{figure}
+
+The time of flight resolution measurements are plotted as a function of the
+beam energy in Figure~\ref{fig:LYSOCubeTOFResolutionVsEnergy}, and is observed
+to follow a $1/\sqrt{E}$ dependence. We fit the result to the sum of a 
+$1/\sqrt{E}$ term and a constant term, and determine the constant term to
+be about $11$~ps with an uncertainty of about $30\%$. 
+
+\begin{figure}[h] \centering
+\includegraphics[width=0.45\textwidth]{figs/TimeResolutionVsEnergy_CrystalCube} 
+\caption{ The time of flight resolution measured using the LYSO cube
+sampling calorimeter is plotted as a function of the electron beam energy, 
+and fitted to the sum of a $1/\sqrt{E}$ term and a constant term. }
+\label{fig:LYSOCubeTOFResolutionVsEnergy}
+\end{figure}
+
+Given that we control the combined contribution to the time of flight
+resolution of the electromagnetic shower
+fluctuations, the photodetector time resolution, and the DAQ electronics
+to about $25$~ps~\cite{RonzhinNIMA} and that the geometric contribution 
+from the transverse size of the trigger is about $12$~ps,
+we infer that the contribution of the scintillation mechanism in LYSO
+to the time of flight resolution is less than $20$~ps.
 
 
 \subsection{Studies of Time Jitter from Optical Transport}
@@ -492,7 +491,8 @@ using DSB1 fibers for electron beams with varying beam energies. }
 
 \begin{figure}[h] \centering
 \includegraphics[width=0.45\textwidth]{figs/TimeResolutionVsEnergy_ShashlikDSB1Fiber} 
-\caption{ The time of flight resolution is plotted as a function of
+\caption{ The time of flight resolution measured using the LYSO-tungsten shashlik
+calorimeter with signal extracted using DSB1 fibers is plotted as a function of
 the electron beam energy, and fitted to a $1/\sqrt{E}$ functional form. }
 \label{fig:ShashlikFiberTOFResolutionVsEnergy}
 \end{figure}
@@ -542,8 +542,10 @@ with signal extracted from the edges of two LYSO layers. }
 
 \begin{figure}[h] \centering
 \includegraphics[width=0.45\textwidth]{figs/TimeResolutionVsEnergy_ShashlikSideReadout} 
-\caption{ The time of flight resolution is plotted as a function of
-the electron beam energy, and fitted to the sum of a $1/\sqrt{E}$ term and a constant term. }
+\caption{ The time of flight resolution measured using the LYSO-tungsten shashlik calorimeter
+with light signals extracted by direct optical coupling to the edges of two LYSO layers 
+is plotted as a function of the electron beam energy, and fitted to the sum 
+of a $1/\sqrt{E}$ term and a constant term. }
 \label{fig:ShashlikSideReadoutTOFResolutionVsEnergy}
 \end{figure}
 
