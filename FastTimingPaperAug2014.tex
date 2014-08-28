@@ -288,7 +288,7 @@ through direct optical coupling to the edges of a few
 LYSO layers. 
 
 
-\subsection{Sampling Calorimeter Setup}
+\subsection{Studies of Time Jitter from Scintillation}
 
 
 In this section we report results of the
@@ -392,7 +392,132 @@ Figure~\ref{fig:ShashlikCell}.
 \label{fig:ShashlikCell}
 \end{figure}
 
-\subsection{LYSO/W Shashlik Calorimeter Setup}
+
+\subsection{Studies of Time Jitter from Optical Transport}
+
+We study the contribution to the time of flight resolution due to
+various forms of optical transport in the context of a LYSO-tungsten Shashlik
+calorimeter, one of the proposed choices for the Phase 2 upgrade of the
+CMS endcap calorimeter system. We compare the time of flight resolution
+performance for two alternative optical transport schemes. 
+
+We begin with a conventional scheme where scintillation light is collected
+by wavelength shifting fibers through a set of four holes penetrating 
+the LYSO layers. A schematic diagram and a photograph showing this setup 
+is shown in Figure~\ref{fig:ShashlikFiberSetup}. 
+MCP photomultiplier tubes produed by Hamamatsu (R3809) are used to collect 
+the scintillation light, while a Photek 240 MCP is used as the reference 
+time detector. 
+
+
+\begin{figure}[h] \centering
+\includegraphics[width=0.45\textwidth]{figs/ShashlikFiberSetupSchematic} 
+\includegraphics[width=0.45\textwidth]{figs/ShashlikFiberSetupPhoto} 
+\caption{ A schematic diagram of the experimental setup for the
+time of flight measurement using the LYSO-tungsten shashlik calorimeter
+with fiber signal extraction is shown, along with a photograph of the
+experimental setup. } 
+\label{fig:ShashlikFiberSetup}
+\end{figure}
+
+In addition to effects of light transport along the fiber, 
+this scheme has the added effect of absorption and re-emission as 
+the scintillation light enters the wavelength shifting material. 
+The characteristic time scales involved in the wavelength shifting 
+mechanism may affect the rise time and time jitter of the final signal 
+pulse. We investigate this particular effect in greater detail by
+comparing the signal pulses obtained using two different types
+of wavelength shifting fiber in the same LYSO-tungsten shashlik
+calorimeter. In Figure~\ref{fig:FiberPulseComparison} we show
+the pulse shapes averaged over a few hundred events obtained 
+using DSB1 fibers and Y11 fibers, plotted in blue and red respectively,
+compared with the average pulse shape obtained from direct optical 
+coupling to the edge of one of the LYSO tiles, plotted in green.
+We find that the rise time of the pulse shape obtained using the 
+DSB1 fibers, at about $3.5$~ns, is significantly faster than the rise time
+of the pulse obtained using the Y11 fibers, which is about $10$~ns,
+and is within a factor of two of the rise time for the pulse obtained 
+through direct optical coupling to the photodetector. This indicates
+that the choice of fiber is an important parameter for 
+optimizing the time of flight resolution for the design of 
+this type of calorimeter, and that the DSB1 fibers 
+already provides a reasonably good choice.
+
+\begin{figure}[h] \centering
+\includegraphics[width=0.45\textwidth]{figs/FiberPulses} 
+\includegraphics[width=0.45\textwidth]{figs/FiberPulsesZoom} 
+\caption{ Pulse shapes digitized by the DRS4 board and averaged over several hundred events 
+obtained from the LYSO-tungsten shashlik calorimeter with light extracted using
+DSB1 (blue) and Y11 (red) wavelength shifting fibers, are compared with 
+the averaged pulse shapes obtained from direct coupling of the photodetector (green)
+to one edge of one of the LYSO tiles in the shashlik calorimeter.} 
+\label{fig:FiberPulseComparison}
+\end{figure}
+
+
+Using the DSB1 fibers, we measure the time of flight resolution
+for electron beams with beam energy varying between $4$~GeV and $32$~GeV.
+In Figure~\ref{fig:ShashlikFiberEnergy32GeV} we show the distribution
+of the pulse integral, a quantity proportional to the measured energy,
+for the $32$~GeV beam and observe an energy resolution of about $5\%$.
+The time of flight distributions, fitted to gaussian functions,
+are shown in Figure~\ref{fig:ShashlikFiberTOF}, and the resulting
+$\sigma$ parameter of the gaussian is plotted as a function of the
+beam energy in Figure~\ref{fig:ShashlikFiberTOFResolutionVsEnergy}.
+We find that the dependence of the time of flight resolution on
+beam energy exhibits a $1/\sqrt{E}$ functional form, indicating
+that the current calorimeter setup remains in the photo-statistics
+limited regime. The best time of flight resolution we obtain
+with this setup is about $110$~ps. As the measurement is photo-statistics
+limited, to improve on this result in the future, work is needed
+on improving the light collection efficiency. 
+
+\begin{figure}[h] \centering
+\includegraphics[width=0.45\textwidth]{figs/ShashlikFiberEnergy32GeV} 
+\caption{ Histogram of the pulse integral for events recorded using
+the LYSO-tungsten shashlik calorimeter using the DSB1 fibers for 
+a $32$~GeV electron beam. } 
+\label{fig:ShashlikFiberEnergy32GeV}
+\end{figure}
+
+\begin{figure}[h] \centering
+\includegraphics[width=0.45\textwidth]{figs/ShashlikFiberTOF4GeV} 
+\includegraphics[width=0.45\textwidth]{figs/ShashlikFiberTOF8GeV} 
+\includegraphics[width=0.45\textwidth]{figs/ShashlikFiberTOF16GeV} 
+\includegraphics[width=0.45\textwidth]{figs/ShashlikFiberTOF32GeV} 
+\caption{ Time of flight distributions for the LYSO-tungsten shashlik calorimeter
+using DSB1 fibers for electron beams with varying beam energies. } 
+\label{fig:ShashlikFiberTOF}
+\end{figure}
+
+\begin{figure}[h] \centering
+\includegraphics[width=0.45\textwidth]{figs/ShashlikFiberTOFResolutionVsEnergy} 
+\caption{ The time of flight resolution is plotted as a function of
+the electron beam energy, and fitted to a $1/\sqrt{E}$ functional form. }
+\label{fig:ShashlikFiberTOFResolutionVsEnergy}
+\end{figure}
+
+
+Next, we studied an alternative scheme where the MCP photodetectors
+are directly coupled to the edge of two subsequent LYSO layers of the
+shashlik calorimeter and scintillation light is directly transported 
+to the photodetector through the edge of the tile layers. 
+A schematic diagram and photographs showing the exposed edge
+of the LYSO layers and the setup is shown in Figure~\ref{fig:ShashlikSideReadout}.
+
+\begin{figure}[h] \centering
+\includegraphics[width=0.45\textwidth]{figs/ShashlikSideReadoutSetupSchematic} 
+\includegraphics[width=0.45\textwidth]{figs/ShashlikSideReadoutPhotoA} 
+\includegraphics[width=0.45\textwidth]{figs/ShashlikSideReadoutPhotoB} 
+\caption{ A schematic diagram of the experimental setup for the
+time of flight measurement using the LYSO-tungsten shashlik calorimeter
+with signal extraction from the edges of two LYSO layers is shown. Photographs
+of the exposed edges of the LYSO layers and the full experimental setup is shown. } 
+\label{fig:ShashlikSideReadoutSetup}
+\end{figure}
+
+
+
 
 \section{Summary}
 
