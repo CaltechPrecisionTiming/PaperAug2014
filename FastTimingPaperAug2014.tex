@@ -1,5 +1,5 @@
 
-\documentclass[11pt]{article}
+\documentclass[12pt]{article}
 \usepackage[hmargin=1.5cm,vmargin=1.5cm]{geometry}
 
 \usepackage[affil-it]{authblk}
@@ -61,49 +61,47 @@ future high-energy physics experiments are discussed. }
 % say that we have studied 1,4,5 already, and now we focus on 2 and 3 to complete the story.
 % briefly introduce the experiments that we did to understand 2 and 3 ( sampling calo with LYSO cube, shashlik with fibers, shashlik with side readout)
 
-Current and future high energy physics particle colliders are capable to provide
-instantaneous luminosities of 10$^{34}$ cm$^{-2}$s$^{-1}$ and above. The high
+During the HL-LHC operations the expected instantaneous luminosity is estimated
+to be $\mathcal{L}\geq$10$^{34}$~cm$^{-2}$s$^{-1}$, resulting in 140 to 200
+simultaneous proton-proton collisions that occur every 25 nsec. Due to the size of the proton bunches and the resulting
+time it takes for them to pass through each other in the luminous region, the
+collisions are spread out in time.  The high
 centre of mass energy, the large number of simultaneous collision of beam
 particles in the experiments and the very high repetition rates of the collision
 events pose huge challenges. They result in extremely high particle fluxes,
 causing very high occupancies in the particle physics detectors operating at
-these machines. To reconstruct the physics events, the detectors have to make as
-much information as possible available on the final state particles. In addition to
-the detailed spatial information of the final state particles, as well as their
-momenta and energies, one can make use of the relative time of arrival at a given
-location in the detector. The work presented in this document is targeted to
+these machines. The work presented in this document is targeted to
 address the challenges posed by the experimental conditions expected for the
 high luminosity upgrade of the Large Hadron Collider (HL-LHC) at CERN. 
 
-During the HL-LHC operations the expected instantaneous luminosity is estimated
-to be $\mathcal{L}\geq$10$^{34}$~cm$^{-2}$s$^{-1}$, resulting in 140 to 200
-simultaneous proton-proton collisions that occur every 25 nsec. The luminous
-region inside the detector (the location where the protons collide) will have a
-length of a few 10 cm. Due to the size of the proton bunches and the resulting
-time it takes for them to pass through each other in the luminous region, the
-collisions are spread out in time. During the 2011-2012 operation of LHC this
-spread was about 200 ps. For HL-LHC this spread may increase as a consequence of
-an advanced beam optics of the interaction region. 
+% During the HL-LHC operations the expected instantaneous luminosity is estimated
+% to be $\mathcal{L}\geq$10$^{34}$~cm$^{-2}$s$^{-1}$, resulting in 140 to 200
+% simultaneous proton-proton collisions that occur every 25 nsec. The luminous
+% region inside the detector (the location where the protons collide) will have a
+% length of a few 10 cm. Due to the size of the proton bunches and the resulting
+% time it takes for them to pass through each other in the luminous region, the
+% collisions are spread out in time. During the 2011-2012 operation of LHC this
+% spread was about 200 ps.
 
-The ATLAS and CMS detectors at the LHC are expected to undergo significant
-upgrades and modifications, although the basic geometric layout and size will
-remain unchanged. In this work we assume that a detector capable of measuring
-the time of arrival of a particle would be located at the outer perimeter of the
-tracking device or in the front part of the calorimeter, as for example in the
-electromagnetic part of the calorimeter. The typical time scales relevant for
-such a setup are: 
+% The ATLAS and CMS detectors at the LHC are expected to undergo significant
+% upgrades and modifications, although the basic geometric layout and size will
+% remain unchanged. In this work we assume that a detector capable of measuring
+% the time of arrival of a particle would be located at the outer perimeter of the
+% tracking device or in the front part of the calorimeter, as for example in the
+% electromagnetic part of the calorimeter. The typical time scales relevant for
+% such a setup are: 
 
-\begin{itemize}
-  \item Collision time spread within the luminous region is expected to be
-        $\sim0.2$--$1.0$ ns.
-  \item Typical time of flight of a particle at the speed of light from the
-        primary vertex of a proton-proton collision to the location of the
-        precision timing device would be in the range of 4~(11)~ns in the barrel
-        (endcap) region of the CMS detector.
-  \item The size of the shower of electromagnetically interacting particles at
-        high energies results in a typical time scale of order 1 ns over which
-        the showering process evolved. 
-\end{itemize} 
+% \begin{itemize}
+%   \item Collision time spread within the luminous region is expected to be
+%         $\sim0.2$--$1.0$ ns.
+%   \item Typical time of flight of a particle at the speed of light from the
+%         primary vertex of a proton-proton collision to the location of the
+%         precision timing device would be in the range of 4~(11)~ns in the barrel
+%         (endcap) region of the CMS detector.
+%   \item The size of the shower of electromagnetically interacting particles at
+%         high energies results in a typical time scale of order 1 ns over which
+%         the showering process evolved. 
+% \end{itemize} 
 
 Some of the highest priority goals of the HL-LHC physics program are the
 precision measurements of the Higgs boson properties (e.g. in
@@ -113,9 +111,7 @@ conditions of HL-LHC these physics objectives are challenged by the presence of
 high pileup activity, affecting the ability to identify jets that originate from
 the vector boson scattering vertex, and degrade the missing transverse energy
 resolution. Some fraction of the pileup contamination can be removed through
-combination of calorimeter and tracker information. Any calorimeter cluster
-originating from a charged hadron can be associated to an extrapolated track as
-well and hence to its origin in the collision region. Photons and neutral
+combination of calorimeter and tracker information. Photons and neutral
 hadrons cannot be associated to their production vertex with the tracking
 detector. This is where a very precise timing would benefit the event
 reconstruction tremendously if a precision of a few 10 ps can be achieved,
@@ -125,34 +121,18 @@ very closely linked to the energy measurement, ideally based on the same active
 detector element. It is in this context that we study the possibility to measure
 the time of arrival of electromagnetic particles with a calorimetric device.
 
-\section{Experimental Setup}
-At present we are investigating two options for a calorimeter capable of high
-precision timing: a) a dedicated detector based on micro-channel plates (MCP) to
-measure shower particles~\cite{MCPFastCaloNIMA}, and b) scintillating crystals
+At present we are investigating an option for a calorimeter capable of high
+precision timing based on  scintillating crystals
 as an active medium to detect the high energy particles and their time of
 arrival simultaneously~\cite{AdiCalor14}. This choices are driven by the
 potential use case of a precision timing detector for the high luminosity
 upgrade of the LHC experiments. For this, the measurement of the time of arrival
 of high energy photons with energies of 1 GeV and above is of particular
-importance. The study of the dedicated detector was discussed in detail in
-Ref.~\cite{MCPFastCaloNIMA}, and in this document we will present a brief
-review, while focusing mostly on the option with scintillating crystals. 
-
-Several elements of our experimental setup are shared for studies of the two
-options above. In both studies we use MCP-PMT photo-detectors (either Photek 240
-or Hamamatsu R3809U-52), and version 4 of the DRS4 evaluation
-boards~\cite{DRS4}. We used the Fermilab Test Beam Facility (FTBF), which
-provided proton beams from Fermilab's Main Injector accelerator at 120 GeV/c, as
-well as secondary electron beams of energies ranging from 4 to 32 GeV/c.
-Detectors were located inside of a dark box lined with copper foil for RF
-shielding. A 2x2~mm$^2$ scintillator placed inside the box, as shown in
-Figure~\ref{fig:SetupLYSO} served as a trigger start signal. For particle
-identification we utilized the differential Cherenkov counter located upstream
-of our setup.
+importance. 
 
 In the following studies we focus on the extraction of the timing information
 from scintillating crystals. We focus our studies on LYSO crystals, which have
-an advantage of very high light yield ($\sim 30$K photons/MeV) and radiation
+an advantage of very high light yield ($\sim 30$K photons/MeV) and are radiation
 tolerant, and thus are one of the options considered for the CMS upgrade for
 HL-LHC. In Figure~\ref{fig:ScintillatorTiming} we present a simplified
 experimental setup to illustrate the major contributions to the precision of the
@@ -162,9 +142,8 @@ scintillation light in the crystal. We refer to the time scale between entering 
 and the first conversion as $t_C$. The
 scintillation process is usually described by two time constants: the rise time
 of the scintillation light and its typical decay constant. The rise time of the
-scintillation light signal from LYSO crystals has been measured to on the order
-of 75 ps~\cite{LYSOrisetime}. The decay time constant for LYSO is on the order
-of 40 ns. For high energy particles in the multi GeV range the shower even for
+scintillation light signal from LYSO crystals has been measured to be
+around 100~ps~\cite{LYSOrisetime}. The decay time constant for LYSO is around 40 ns. For high energy particles in the multi GeV range the shower even for
 electromagnetic particles will extend over several centimeters, taking on the
 order of a nanosecond. With our current experimental setup we cannot
 de-convolute the time structure of the scintillation process and the propagation
@@ -180,14 +159,31 @@ boxes and in the text.}
 \label{fig:ScintillatorTiming}
 \end{figure}
 
-The scintillation light produced needs to be detected. Typically this is done
-with one or several photo detectors attached to the scintillator. The time $t_T$
+The scintillation light that was produced needs to be detected. Typically this is done
+with one or several photo detectors attached to the scintillator. The
+transit time $t_T$
 it takes the scintillation photons to travel through the crystal may vary
 substantially due to the isotropic angular distribution of the scintillation
 light and the possible internal reflection of the light inside the crystal
 before eventually reaching the photo detector. Finally, the photo detector and
 its readout system have characteristic time constants $t_P$ and $t_D$ which will
 affect the precision of the measurement as well.
+
+
+\section{Experimental Equipment}
+
+Several elements of our experimental setup are shared for studies of the two
+options above. In both studies we use MCP-PMT photo-detectors (either Photek 240
+or Hamamatsu R3809U-52), and version 4 of the DRS4 evaluation
+boards~\cite{DRS4}. We used the Fermilab Test Beam Facility (FTBF), which
+provided proton beams from Fermilab's Main Injector accelerator at 120 GeV/c, as
+well as secondary electron beams of energies ranging from 4 to 32 GeV/c.
+Detectors were located inside of a dark box lined with copper foil for RF
+shielding. A 2x2~mm$^2$ scintillator placed inside the box, as shown in
+Figure~\ref{fig:SetupLYSO} served as a trigger start signal. For particle
+identification we utilized the differential Cherenkov counter located upstream
+of our setup.
+
 
 In this study we focus on studying the effects of the shower development,
 scintillation light emission and light propagation inside the crystal. Since the
@@ -560,7 +556,10 @@ some improvement to light collection is achieved.
 
 \section{Summary}
 
-\end{document}  
+\bibliography{FastTimingPaperAug2014}{}
+\bibliographystyle{ieeetr}
+\end{document}    
+        
 
 
 
