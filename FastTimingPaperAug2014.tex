@@ -56,99 +56,60 @@ future high-energy physics experiments are discussed. }
 
 
 \section{Introduction}
-%shorten the LHC discussion to 1 paragraph
-%put the TOF cartoon diagram here and discuss the various aspects affects TOF resolution
-% say that we have studied 1,4,5 already, and now we focus on 2 and 3 to complete the story.
-% briefly introduce the experiments that we did to understand 2 and 3 ( sampling calo with LYSO cube, shashlik with fibers, shashlik with side readout)
 
-During the HL-LHC operations the expected instantaneous luminosity is estimated
-to be $\mathcal{L}\geq$10$^{34}$~cm$^{-2}$s$^{-1}$, resulting in 140 to 200
-simultaneous proton-proton collisions that occur every 25 nsec. Due to the size of the proton bunches and the resulting
-time it takes for them to pass through each other in the luminous region, the
-collisions are spread out in time.  The high
-centre of mass energy, the large number of simultaneous collision of beam
-particles in the experiments and the very high repetition rates of the collision
-events pose huge challenges. They result in extremely high particle fluxes,
-causing very high occupancies in the particle physics detectors operating at
-these machines. The work presented in this document is targeted to
-address the challenges posed by the experimental conditions expected for the
-high luminosity upgrade of the Large Hadron Collider (HL-LHC) at CERN. 
+The high luminosity update of the Large Hadron Collider (HL-LHC) at CERN
+is expected to provide instantaneous luminosities of 10$^{34}$ cm$^{-2}$s$^{-1}$
+in order to achieve, among other things, the capability to perform precision 
+measurements of the Higgs couplings, to probe rare Higgs processes,
+and to study the scattering of longitudinally polarized W bosons. Such a
+high instantaneous luminosity comes at the price of significantly increased
+amount of pileup, projected to be at an average of $140$ to $200$ simultaneous 
+interactions per bunch crossing. This large amount of pileup poses serious
+challenges for the ability to reconstruct events of interest, as the 
+likelihood for confusion due to contamination from particles produced
+in different pileup events significantly increases. The ability to
+discriminate between jets produced in the event of interest,
+particularly for those associated with the vector-boson fusion process,
+from jets produced by pileup collisions, and the missing transverse energy
+resolution are two of the most important performance benchmarks
+that will be severely degraded.
 
-% During the HL-LHC operations the expected instantaneous luminosity is estimated
-% to be $\mathcal{L}\geq$10$^{34}$~cm$^{-2}$s$^{-1}$, resulting in 140 to 200
-% simultaneous proton-proton collisions that occur every 25 nsec. The luminous
-% region inside the detector (the location where the protons collide) will have a
-% length of a few 10 cm. Due to the size of the proton bunches and the resulting
-% time it takes for them to pass through each other in the luminous region, the
-% collisions are spread out in time. During the 2011-2012 operation of LHC this
-% spread was about 200 ps.
+One possible solution to mitigating such pileup confusion effects,
+complementary to other solutions incorporating precision tracking,
+is to incorporate a time of arrival measurement associated with a
+particular layer of the calorimeter, allowing for a timestamp
+assignment for both charged particles and photons. Such a measurement
+with a precision of about $20$ to $30$~ps, when unambiguously
+associated to the corresponding energy measurement, can significantly reduce
+the effect of pileup particles on the reconstruction of the
+event of interest as the spread in collision time of pileup events
+are on the order of about $200$~ps. A crucial element is
+the link between the time measurement and the energy measurement,
+and therefore one ideal design is to make to time and energy
+measurement in the same active detector element. It is in this context 
+that we study the possibility to measure the time of arrival of 
+electromagnetic particles with a calorimetric device.
 
-% The ATLAS and CMS detectors at the LHC are expected to undergo significant
-% upgrades and modifications, although the basic geometric layout and size will
-% remain unchanged. In this work we assume that a detector capable of measuring
-% the time of arrival of a particle would be located at the outer perimeter of the
-% tracking device or in the front part of the calorimeter, as for example in the
-% electromagnetic part of the calorimeter. The typical time scales relevant for
-% such a setup are: 
-
-% \begin{itemize}
-%   \item Collision time spread within the luminous region is expected to be
-%         $\sim0.2$--$1.0$ ns.
-%   \item Typical time of flight of a particle at the speed of light from the
-%         primary vertex of a proton-proton collision to the location of the
-%         precision timing device would be in the range of 4~(11)~ns in the barrel
-%         (endcap) region of the CMS detector.
-%   \item The size of the shower of electromagnetically interacting particles at
-%         high energies results in a typical time scale of order 1 ns over which
-%         the showering process evolved. 
-% \end{itemize} 
-
-Some of the highest priority goals of the HL-LHC physics program are the
-precision measurements of the Higgs boson properties (e.g. in
-$H\to\gamma\gamma$), searches (or measurements of properties) of particles
-discovered previously in LHC, and studies of the W$_L$W$_L$ scattering. In the
-conditions of HL-LHC these physics objectives are challenged by the presence of
-high pileup activity, affecting the ability to identify jets that originate from
-the vector boson scattering vertex, and degrade the missing transverse energy
-resolution. Some fraction of the pileup contamination can be removed through
-combination of calorimeter and tracker information. Photons and neutral
-hadrons cannot be associated to their production vertex with the tracking
-detector. This is where a very precise timing would benefit the event
-reconstruction tremendously if a precision of a few 10 ps can be achieved,
-corresponding to a few mm resolution at the vertex location~\cite{AdiCalor14}.
-To be utilized effectively it seems mandatory that the timing measurement is
-very closely linked to the energy measurement, ideally based on the same active
-detector element. It is in this context that we study the possibility to measure
-the time of arrival of electromagnetic particles with a calorimetric device.
-
-At present we are investigating an option for a calorimeter capable of high
-precision timing based on  scintillating crystals
-as an active medium to detect the high energy particles and their time of
-arrival simultaneously~\cite{AdiCalor14}. This choices are driven by the
-potential use case of a precision timing detector for the high luminosity
-upgrade of the LHC experiments. For this, the measurement of the time of arrival
-of high energy photons with energies of 1 GeV and above is of particular
-importance. 
-
-In the following studies we focus on the extraction of the timing information
-from scintillating crystals. We focus our studies on LYSO crystals, which have
-an advantage of very high light yield ($\sim 30$K photons/MeV) and are radiation
-tolerant, and thus are one of the options considered for the CMS upgrade for
-HL-LHC. In Figure~\ref{fig:ScintillatorTiming} we present a simplified
-experimental setup to illustrate the major contributions to the precision of the
-timing measurement with a monolithic, large scintillating crystal. Upon entering
-the crystal the photon  needs to convert and start showering to induce
-scintillation light in the crystal. We refer to the time scale between entering the crystal
-and the first conversion as $t_C$. The
-scintillation process is usually described by two time constants: the rise time
-of the scintillation light and its typical decay constant. The rise time of the
-scintillation light signal from LYSO crystals has been measured to be
-around 100~ps~\cite{LYSOrisetime}. The decay time constant for LYSO is around 40 ns. For high energy particles in the multi GeV range the shower even for
-electromagnetic particles will extend over several centimeters, taking on the
-order of a nanosecond. With our current experimental setup we cannot
-de-convolute the time structure of the scintillation process and the propagation
-of the shower through the crystal. We denote the related characteristic time
-constant with $t_S$. 
+To demonstrate proof of principle, we focus our studies on
+measurements of the time of flight using sampling calorimeters
+based on LYSO crystals. Besides the advantage of very high light
+yield ($\sim 30$K photons/MeV), LYSO is also radiation tolerant and
+thus is the main active element of one of the options considered 
+for the CMS upgrade for the HL-LHC. In Figure~\ref{fig:ScintillatorTiming} 
+we present a simplified illustration of the major contributions to the 
+precision of the timing measurement using a monolithic crystal calorimeter.
+Upon entering the crystal the photon converts and begins to shower,
+which produces scintillation light in the crystal. The time scale
+between entering the crystal and the first conversion is referred to
+as $t_C$. The time scale associated with the rise time of the scintillation 
+light signal and the propagation of the electromagnetic shower is denoted
+by $t_S$. Typically the scintillation light is collected by a photodetector
+located at the back end of the calorimeter cell. The time scale associated
+with the optical transit of the scintillation light to the location of the
+photodetector is denoted by $t_T$. Finally, the photo detector and
+its readout system have characteristic time constants $t_P$ and $t_D$.
+Each of the above time scales have fluctuations on an event-by-event
+level, which contribute to the time of flight resolution.
 
 \begin{figure}[h] \centering
 \includegraphics[width=0.85\textwidth]{figs/ScintillatorTiming} \caption{Factors
@@ -159,15 +120,21 @@ boxes and in the text.}
 \label{fig:ScintillatorTiming}
 \end{figure}
 
-The scintillation light that was produced needs to be detected. Typically this is done
-with one or several photo detectors attached to the scintillator. The
-transit time $t_T$
-it takes the scintillation photons to travel through the crystal may vary
-substantially due to the isotropic angular distribution of the scintillation
-light and the possible internal reflection of the light inside the crystal
-before eventually reaching the photo detector. Finally, the photo detector and
-its readout system have characteristic time constants $t_P$ and $t_D$ which will
-affect the precision of the measurement as well.
+In past studies~\cite{MCPFastCaloNIMA}, we have measured the timing resolution
+associated with the photodetectors to be
+about $11$~ps, and the electronic time resolution
+of the DAQ system to be about $6$~ps. By measuring the time of flight
+resolution at different absorber thicknesses for electron beams with
+energies varying from $12$ to $32$~GeV, we showed that the contribution
+of the fluctuations of the electromagnetic shower, associated with
+the time scale $t_{C}$, is less than $20$~ps. 
+
+To complete the characterization of the time of flight resolution
+for a crystal based calorimeter, we report here on the results
+of studies focusing on the contributions due to fluctuations
+in the scintillation process, and in the optical transit
+to the photodetector.
+
 
 
 \section{Experimental Equipment}
@@ -382,7 +349,7 @@ and fitted to the sum of a $1/\sqrt{E}$ term and a constant term. }
 Given that we control the combined contribution to the time of flight
 resolution of the electromagnetic shower
 fluctuations, the photodetector time resolution, and the DAQ electronics
-to about $25$~ps~\cite{RonzhinNIMA} and that the geometric contribution 
+to about $25$~ps~\cite{MCPFastCaloNIMA} and that the geometric contribution 
 from the transverse size of the trigger is about $12$~ps,
 we infer that the contribution of the scintillation mechanism in LYSO
 to the time of flight resolution is less than $20$~ps.
