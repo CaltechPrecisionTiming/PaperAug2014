@@ -139,73 +139,77 @@ to the photodetector.
 
 \section{Experimental Equipment}
 
-Several elements of our experimental setup are shared for studies of the two
-options above. In both studies we use MCP-PMT photo-detectors (either Photek 240
-or Hamamatsu R3809U-52), and version 4 of the DRS4 evaluation
-boards~\cite{DRS4}. We used the Fermilab Test Beam Facility (FTBF), which
-provided proton beams from Fermilab's Main Injector accelerator at 120 GeV/c, as
-well as secondary electron beams of energies ranging from 4 to 32 GeV/c.
-Detectors were located inside of a dark box lined with copper foil for RF
-shielding. A 2x2~mm$^2$ scintillator placed inside the box, as shown in
-Figure~\ref{fig:SetupLYSO} served as a trigger start signal. For particle
-identification we utilized the differential Cherenkov counter located upstream
-of our setup.
+Several detector elements of our experimental setup are shared for 
+the studies described. Two types of MCP-PMT photodetectors 
+are used, one produced by Hamamatsu 
+( model R3809-52 )~\cite{HamamatsuMCPPMT}, and one
+produced by Photek ( model PMT240 )~\cite{Photek240}. 
+A DRS4 waveform digitizer evaluation board (version 4)~\cite{DRS4} was
+used as the primary DAQ system connected to a laptop via
+USB interface. All experimental beam studies were performed
+at the Fermilab Test Beam Facility (FTBF), which 
+provided proton beams from the Fermilab Main Injector accelerator
+at $120$ GeV/c, and secondary electron beams of energies ranging 
+from $4$ to $32$~GeV/c. Detector elements were placed inside of a 
+dark box lined with copper foil, providing RF shielding. A
+$2$x$2$~$\mathrm{mm}^{2}$ scintillator is placed inside the box at
+the upstream extremity and used as trigger for the DAQ readout,
+providing a relatively strict constraint on the location and directionality
+of the beam particles used in the time of flight studies. 
+Finally, the differential Cherenkov counter located upstream
+of our experimental hall is used for electron identification. 
 
+%Maybe need some more photos of individual devices%
+A schematic diagram of a typical time of flight measurement
+is shown in Figure~\ref{fig:TypicalSchematicDiagram}. All
+measurements involve a fast photodetector which serves to
+measure the reference ($t_{0}$) timestamp, typically 
+an MCP-PMT, and a photodetector further downstream
+that detects the signal associated with the
+electromagnetic shower from which a simultaneous energy 
+and time ($t_{1}$) measurement is made. 
 
-In this study we focus on studying the effects of the shower development,
-scintillation light emission and light propagation inside the crystal. Since the
-photodetectors and readout system are shared with the experiment described
-in~\cite{MCPFastCaloNIMA}, the chararacteristic times $t_P$ and $t_D$ are shared
-between these two measurements. In our measurements in
-Ref.~\cite{MCPFastCaloNIMA} we found the time-of-flight resolution between the
-Photek 240 detectors to be $\sim 15$psec~\footnote{Here and in the following we
-refer the standard deviation of the Gaussian fit as the ``resolution''}.
-Assuming that the resolution of both Photek 240 is the same, one can derive the
-time resolution of a Photek 240 to be $15/\sqrt{2}\approx$11 ps. The electronic
-resolution of the DRS4 board was found to be $5-7$ psec. 
-
-\begin{figure}[h] \centering
-\includegraphics[width=0.5\textwidth]{figs/SetupLYSO} 
-\caption{Experimental
-setup for the test beam measurements. Inside a light tight box, shielded against
-environmental noise, a LYSO crystal is mounted on one of the Photek 240
-detectors. In all measurements the 2x2 mm$^2$ scintillator was used for
-triggering. The reference Photek 240 is placed right after the trigger, and a
-Hamamatsu R3809 MCP is placed behind the crystal as a Veto detector. Lead bricks
-are placed upstream of the Photek 240 that reads out the crystal, to shield the detector from 
-direct hits on MCP-PMT detector from beam particles.} 
-\label{fig:SetupLYSO}
-\end{figure}
-
-
-In all results presented here which invoke the MCP based reference detector
-measurement we did not unfold its contribution to the final result. In the
-initial studies presented here we focus on measurements which allow to quantify
-the contribution of the showering process in the crystals, the scintillation
-light emission and the light propagation inside the crystal. These contributions
-will dependent on the type of scintillator used, its size and its surface
-properties. Future experiments will be carried out to study all these factors in
-detail.
 
 \section{Event Selection and Analysis}
-To assign a time stamp for each signal
-pulse, we use different procedures for the reference detector and for the one
-with LYSO crystal, since their pulses have different shapes. The pulse from the
-reference detector is a very sharp and symmetric around its maximum amplitude,
-as shown in Figure~\ref{fig:PulseShapes}. Therefore, for the reference detector
-the assignment of a time stamp is the following. We first determine the time
-position of the pulse peak. A Gaussian function is fitted to the pulse maximum
-using three points before the maximum of the pulse peak and four points after
-the maximum. The mean value of the Gaussian fitted function was used as the time
-stamp for each pulse. A time stamp for the scintillation light is assigned using
-constant fraction fit on the rising edge. We perform a fit with a linear
-function between the points at 20\% and 70\% of the maximum of the pulse peak,
-and the time stamp is assigned as the midpoint of the fitted function. Examples of fits performed to assign a time stamp from each pulse are shown in Figure~\ref{fig:PulseFits}.
+
+The analysis performed in these studies primarily involve
+reconstructing the time of flight of beam particles
+between different detector elements. Slightly different
+algorithms are used for different detector elements,
+but all involve the assignment of a time stamp using 
+specific features of each corresponding signal pulse.
+The signal pulse for the reference time detector
+is typically very sharp and relatively symmetric 
+around its maximum amplitude, as shown in 
+Figure~\ref{fig:PulseShapes}. Therefore, for the reference 
+detector we determine the time position of the pulse
+peak and fit a Gaussian function to the peak
+of the pulse, using three sampling points before the 
+pulse maximum and four sampling points after. The
+mean value of the fitted Gaussian function is
+assigned as the timestamp $t_{0}$. The signal pulse
+for the downstream time measurement is typically
+the result of scintillation light, and exhibits a 
+relatively fast rising edge and a significantly slower
+decay. Therefore, we assign the timestamp $t_{1}$ 
+using a constant fraction fit to the rising edge.
+A linear function is fitted between the sampling
+points at $10\%$ and $60\%$ of the pulse maximum
+and the time stamp is assigned as the time 
+at $20\%$ of the pulse maximum on the fitted
+linear function. Examples of fits performed to assign a 
+time stamp from each pulse are shown in Figure~\ref{fig:PulseFits}.
+In both cases, some optimization was performed 
+to arrive at the exact algorithm parameters used.
 
 \begin{figure}[h] \centering
 \includegraphics[width=0.45\textwidth]{figs/RefPulse} 
 \includegraphics[width=0.45\textwidth]{figs/ScintPulse} 
-\caption{Sample pulses as digitized by the DRS4 board. (Left) is a  pulse from the reference Photek 240, and (right) is a  pulse from 1.7 cm$^3$ LYSO crystal, from an 8 GeV electron run.} 
+\caption{Sample pulses as digitized by the DRS4 board are shown. 
+On the left is a  pulse from the reference Photek 240 MCP-PMT, 
+and on the right is a pulse from the Hamamatsu R3809 MCP-PMT
+optically coupled to a $(1.7\mathrm{ cm})^3$ LYSO crystal 
+from an 8 GeV electron run.} 
 \label{fig:PulseShapes}
 \end{figure}
 
@@ -213,14 +217,20 @@ Event selection and pulse cleaning procedure was used to eliminate abnormal
 pulses in the readout. Large signals above 500 mV were also rejected because
 they saturated the DRS4 inputs. Pulses with an irregular peak profile were
 rejected, as well as pulses which experienced a sudden reversal of polarity that
-is occasionally observed with our readout. We selected the pulses with amplitude
-larger than 20 mV for future analysis. Events containing more than one pulse
-within our readout window of 200 ns were not used. 
+is occasionally observed with our DAQ system. Only pulses with amplitude 
+larger than 20 mV was used for time of flight measurements in order to 
+avoid any impact of the noise from the DRS waveform digitizer DAQ system. 
+Events containing more than one pulse within our readout window of 200 ns 
+were not used. 
 
 \begin{figure}[h] \centering
 \includegraphics[width=0.45\textwidth]{figs/RefPulseFit} 
 \includegraphics[width=0.45\textwidth]{figs/ScintPulseFit} 
-\caption{Sample fits to assign a time stamp to the each pulse. (Left) is a  pulse from the reference Photek 240, and (right) is a  pulse from 1.7 cm$^3$ LYSO crystal, from an 8 GeV electron run.} 
+\caption{Sample fits to assign a time stamp to each pulse is shown. 
+On the left is a pulse from the reference Photek 240 MCP-PMT, and
+on the right is a pulse from the Hamamatsu R3809 MCP-PMT
+optically coupled to a $(1.7\mathrm{ cm})^3$  LYSO crystal
+from an 8 GeV electron run.}
 \label{fig:PulseFits}
 \end{figure}
 
