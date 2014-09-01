@@ -61,7 +61,7 @@ in order to achieve, among other things, the capability to perform precision
 measurements of the Higgs couplings, to probe rare Higgs processes,
 and to study the scattering of longitudinally polarized W bosons. Such a
 high instantaneous luminosity comes at the price of significantly increased
-amount of pileup, projected to be at an average of $140$ to $200$ simultaneous 
+pileup, projected to be at an average of $140$ to $200$ simultaneous 
 interactions per bunch crossing. This large amount of pileup poses serious
 challenges for the ability to reconstruct events of interest, as the 
 likelihood for confusion due to contamination from particles produced
@@ -83,10 +83,10 @@ the effect of pileup particles on the reconstruction of the
 event of interest as the spread in collision time of pileup events
 are on the order of about $200$~ps. A crucial element is
 the link between the time measurement and the energy measurement,
-and therefore one ideal design is to make to time and energy
+and therefore one ideal design is to make the time and energy
 measurement in the same active detector element. It is in this context 
 that we study the possibility to measure the time of arrival of 
-electromagnetic particles with a calorimetric device.
+particles with a calorimetric device.
 
 To demonstrate proof of principle, we focus our studies on
 measurements of the time of flight using sampling calorimeters
@@ -106,7 +106,7 @@ located at the back end of the calorimeter cell. The time scale associated
 with the optical transit of the scintillation light to the location of the
 photodetector is denoted by $t_T$. Finally, the photo detector and
 its readout system have characteristic time constants $t_P$ and $t_D$.
-Each of the above time scales have fluctuations on an event-by-event
+Each of the above time scales have fluctuations or jitter on an event-by-event
 level, which contribute to the time of flight resolution.
 
 \begin{figure}[h] \centering
@@ -138,7 +138,8 @@ to the photodetector.
 \section{Experimental Equipment}
 
 Several detector elements of our experimental setup are shared for 
-the studies described. Two types of MCP-PMT photodetectors 
+the studies described. Two types of multi-channel plate photomultiplier
+tubes or MCP-PMT photodetectors 
 are used, one produced by Hamamatsu 
 ( model R3809-52 )~\cite{HamamatsuMCPPMT}, and one
 produced by Photek ( model PMT240 )~\cite{Photek240}. 
@@ -151,7 +152,7 @@ at $120$ GeV/c, and secondary electron beams of energies ranging
 from $4$ to $32$~GeV/c. Detector elements were placed inside of a 
 dark box lined with copper foil, providing RF shielding. A
 $2$x$2$~$\mathrm{mm}^{2}$ scintillator is placed inside the box at
-the upstream extremity and used as trigger for the DAQ readout,
+the upstream extremity and used to trigger the DAQ readout,
 providing a relatively strict constraint on the location and directionality
 of the beam particles used in the time of flight studies. 
 Finally, the differential Cherenkov counter located upstream
@@ -256,7 +257,7 @@ two components. To study the effect of scintillation
 we perform time of flight resolution measurements
 for electron beams using a sampling calorimeter composed of a 
 $(1.7\mathrm{ cm})^{3}$ LYSO cube as the active 
-scintillating element behind about 4 radiation lengths of lead. 
+scintillating element behind about $4.5$ radiation lengths of lead. 
 The effect of optical transport is studied by measuring
 the time of flight resolution using a shashlik 
 calorimeter composed of alternating layers of tungsten
@@ -276,7 +277,7 @@ as a radiator and a LYSO crystal cube with linear dimensions
 of $1.7$~cm. The LYSO crystal is wrapped in Tyvek and  
 coupled with optical grease to a Hamamatsu R3809 MCP-PMT
 which is used to extract the scintillation photon signal. 
-A Photek 240 MCP is placed upstream of the calorimeter and 
+A Photek 240 MCP-PMT is placed upstream of the calorimeter and 
 is used to measure the reference time. A schematic diagram
 and a photograph of the experimental setup
 is shown in Figure~\ref{fig:LYSOSamplingCaloSetup}. 
@@ -303,23 +304,24 @@ larger than $10$~mV in the Cherenkov counter.
 Finally, large lead bricks are placed upstream of the Hamamatsu
 R3809 MCP-PMT but out of the beam to provide shielding of the photodetector
 from stray particles produced from events where an electromagnetic shower
-occurs elsewhere upstream of the lead radiator. Such stray shower
+occurred elsewhere upstream of the lead radiator. Such stray shower
 events yield very fast signals which can significantly contaminate the
-scintillation signal if uncontrolled. Using the identical
+scintillation signal if left uncontrolled. Using the identical
 experimental setup but without the LYSO active element in place,
 we found that stray shower type events yield less than $10\%$ contamination
 and gives a negligible effect on the scintillation signal. The same calorimeter
-setup using the Photek 240 MCP in place of the Hamamatsu R3809 MCP-PMT,
+setup using the Photek 240 MCP-PMT in place of the Hamamatsu R3809 MCP-PMT,
 which has an active area about $10$ times larger, was found to yield 
 more than $80\%$ contamination and thus did not result in a proper
-measurements of the scintillation signal.
+measurement of the scintillation signal.
 
 Despite the thickness of the LYSO active element layer being relatively
 small and therefore only capturing a fraction of the total energy
 of the electron, the location of the active element is relatively close to the
 shower maximum for electromagnetic showers, and yields
 a reasonable energy measurement. In Figure~\ref{fig:LYSOCubeEnergy32GeV}
-we show the distribution of the pulse integral for events
+we show the distribution of the pulse integral, a quantity
+proportional to the total collected charge, for events
 measured by this sampling calorimeter produced with a
 $32$~GeV electron beam, and find a resolution of about $20\%$.
 
@@ -351,7 +353,7 @@ The time of flight resolution measurements are plotted as a function of the
 beam energy in Figure~\ref{fig:LYSOCubeTOFResolutionVsEnergy}, and is observed
 to follow a $1/\sqrt{E}$ dependence. We fit the result to the sum of a 
 $1/\sqrt{E}$ term and a constant term, and determine the constant term to
-be about $11$~ps with an uncertainty of about $30\%$. 
+be about $11$~ps with a statistical uncertainty of about $30\%$. 
 
 \begin{figure}[h] \centering
 \includegraphics[width=0.45\textwidth]{figs/TimeResolutionVsEnergy_CrystalCube} 
@@ -382,8 +384,8 @@ We begin with a conventional scheme where scintillation light is collected
 by wavelength shifting fibers through a set of four holes penetrating 
 the LYSO layers. A schematic diagram and a photograph showing this setup 
 is shown in Figure~\ref{fig:ShashlikFiberSetup}. 
-MCP photomultiplier tubes produed by Hamamatsu (R3809) are used to collect 
-the scintillation light, while a Photek 240 MCP is used as the reference 
+MCP-PMT's produed by Hamamatsu (R3809) are used to collect 
+the scintillation light, while a Photek 240 MCP-PMT is used as the reference 
 time detector. 
 
 
@@ -417,7 +419,7 @@ and is within a factor of two of the rise time for the pulse obtained
 through direct optical coupling to the photodetector. This indicates
 that the choice of fiber is an important parameter for 
 optimizing the time of flight resolution for the design of 
-this type of calorimeter, and that the DSB1 fibers 
+this type of calorimeter, and that the DSB1 fiber 
 already provides a reasonably good choice.
 
 \begin{figure}[h] \centering
@@ -435,7 +437,7 @@ to one edge of one of the LYSO tiles in the shashlik calorimeter.}
 Using the DSB1 fibers, we measure the time of flight resolution
 for electron beams with beam energy varying between $4$~GeV and $32$~GeV.
 In Figure~\ref{fig:ShashlikFiberEnergy32GeV} we show the distribution
-of the pulse integral, a quantity proportional to the measured energy,
+of the pulse integral, a quantity proportional to the total collected charge,
 for the $32$~GeV beam and observe an energy resolution of about $5\%$.
 The time of flight distributions, fitted to gaussian functions,
 are shown in Figure~\ref{fig:ShashlikFiberTOF}, and the resulting
@@ -445,7 +447,7 @@ We find that the dependence of the time of flight resolution on
 beam energy exhibits a $1/\sqrt{E}$ functional form, indicating
 that the current calorimeter setup remains in the photo-statistics
 limited regime. The best time of flight resolution we obtain
-with this setup is about $110$~ps. As the measurement is photo-statistics
+with this setup is $104$~ps. As the measurement is photo-statistics
 limited, to improve on this result in the future, work is needed
 on improving the light collection efficiency. 
 
@@ -478,7 +480,7 @@ the electron beam energy, and fitted to a $1/\sqrt{E}$ functional form. }
 \end{figure}
 
 
-Next, we studied an alternative scheme where the MCP photodetectors
+Next, we studied an alternative scheme where the MCP-PMT photodetectors
 are directly coupled to the edge of two subsequent LYSO layers of the
 shashlik calorimeter and scintillation light is directly transported 
 to the photodetector through the edge of the tile layers. 
@@ -511,7 +513,7 @@ With the intention to study the relationship between the impact of the
 optical transit time jitter and the impact of limited photo-statistics,
 we minimize the distance that the scintillation light
 must travel to reach the photodetector in this setup and thereby minimize the
-impact of optical transit on the time resolution, but reduce the photostatistics 
+impact of optical transit on the time resolution but reduce the photostatistics 
 as we collect light from only a fraction of the edges of two LYSO layers. 
 In Figure~\ref{fig:ShashlikSideReadoutTOF}, we show the 
 time of flight distributions for electron beams at various energies, 
@@ -520,7 +522,7 @@ $\sigma$ parameter of the gaussian is plotted as a function of the
 beam energy in Figure~\ref{fig:ShashlikSideReadoutTOFResolutionVsEnergy}.
 The best time of flight resolution that we obtain is about $55$~ps, and
 fitting the result to the sum of a $1/\sqrt{E}$ term and a constant term,
-we find a constant term of about $30$~ps with an uncertainty of $30\%$. 
+we find a constant term of about $30$~ps with a statistical uncertainty of $30\%$. 
 
 \begin{figure}[h] \centering
 \includegraphics[width=0.45\textwidth]{figs/TOF_ShashlikSideReadout_Electron_8GeV} 
