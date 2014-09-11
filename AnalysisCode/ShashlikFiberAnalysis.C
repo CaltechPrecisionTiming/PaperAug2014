@@ -408,6 +408,116 @@ void MakeTimeResolutionVsEnergyPlot_Y11() {
 
 }
 
+
+void MakeTimeResolutionVsEnergyPlot_DSBAndCube() {
+
+  //use beam energy for xaxis
+//   // use amplitude for x axis 
+   float x[4] = {200,370,700,1400};
+   float xerr[4] = { 200*0.02, 370*0.02, 700*0.02, 1400*0.02 };
+  
+//   // later runs with better beam alignment
+   float y[4] = {296,222,149, 104 };
+   float yerr[4] = { 61,14,10,5 };
+
+  TGraphErrors *graph = new TGraphErrors(4,x,y,xerr,yerr);
+  graph->SetLineWidth(2);
+  TCanvas * c = new TCanvas("c","c",600,600);
+  c->DrawFrame(50,0,5000,700);
+  c->SetLogx();
+
+  graph->Draw("P");
+  graph->SetMarkerColor(kRed);
+  graph->SetMarkerStyle(20);
+  graph->SetMarkerSize(1.25);
+  graph->SetLineColor(kRed);
+
+
+  graph->SetTitle("");
+  graph->GetXaxis()->SetTitle("Amplitude");
+  graph->GetYaxis()->SetTitle("Time of Flight Resolution [ps]");
+  graph->GetYaxis()->SetTitleOffset(1.25);
+
+
+  TF1 *func = new TF1("TOFResolutionFunction",TOFResolutionFunction,0,100,2);
+   // set the parameters to the mean and RMS of the histogram
+   //func->SetParameters(0,1,1);
+   // give the parameters meaningful names
+   //func->SetParNames ("Constant","Mean_value","Sigma");
+
+   // call TH1::Fit with the name of the TF1 object 
+  func->SetParLimits(1,0,1000);
+   graph->Fit("TOFResolutionFunction");
+
+
+
+
+  float x2[4] = {170*3.0,300*3.0,600*3.0,1200*3.0};
+  float x2err[4] = { 0.02*150*3.0, 0.02*300*3.0, 0.02*600*3.0, 0.02*1200*3.0 };
+  
+//   // later runs with better beam alignment
+  float y2[4] = {70.4,57.4, 40.6, 33.5 };
+  float y2err[4] = { 2.9,2.0,1.5,2.1 };
+
+  TGraphErrors *graph2 = new TGraphErrors(4,x2,y2,x2err,y2err);
+  graph2->SetLineWidth(2);
+  graph2->Draw("P");
+  graph2->SetMarkerColor(kBlue);
+  graph2->SetLineColor(kBlue);
+  graph2->SetMarkerStyle(20);
+  graph2->SetMarkerSize(1.25);
+
+  graph2->SetTitle("");
+//   graph2->GetXaxis()->SetTitle("Electron Beam Energy [GeV]");
+  graph->GetXaxis()->SetTitle("Amplitude");
+  graph2->GetYaxis()->SetTitle("Time of Flight Resolution [ps]");
+  graph2->GetYaxis()->SetTitleOffset(1.25);
+
+
+  TF1 *func2 = new TF1("TOFResolutionFunction2",TOFResolutionFunction,0,100,2);
+  func2->SetLineColor(kBlue);
+   // set the parameters to the mean and RMS of the histogram
+   //func->SetParameters(0,1,1);
+   // give the parameters meaningful names
+   //func->SetParNames ("Constant","Mean_value","Sigma");
+
+   // call TH1::Fit with the name of the TF1 object 
+  func2->SetParLimits(1,0,1000);
+   graph2->Fit("TOFResolutionFunction2");
+
+
+  TLegend *legend = new TLegend (0.4,0.7,0.8,0.85);
+  legend->SetTextSize(0.03);
+  legend->SetFillStyle(0);
+  legend->SetBorderSize(0);
+  legend->AddEntry(graph, "Shashlik cell w/DSB1 Fibers","LP");
+  legend->AddEntry(graph2, "LYSO Cube","LP");
+  legend->Draw();
+
+
+  TLatex *tex = new TLatex();
+  tex->SetNDC();
+  tex->SetTextSize(0.035);
+  tex->SetTextFont(42);
+  tex->SetTextColor(kBlack);
+  tex->DrawLatex(0.40, 0.65, "Shashlik Fiber TOF resolution  ");
+  tex->DrawLatex(0.40, 0.60, "is about 2 times worse than ");
+  tex->DrawLatex(0.40, 0.55, "LYSO cube at the same amplitude. ");
+  
+  tex->SetTextSize(0.030);
+  tex->DrawLatex(0.40, 0.50, "Note: Rise time for DSB1 Fibers is");
+  tex->DrawLatex(0.40, 0.45, "also 2 times slower.");
+
+
+
+  c->SaveAs( "TimeResolutionVsEnergy_ShashlikDSB1FiberAndCube.gif" );
+  c->SaveAs( "TimeResolutionVsEnergy_ShashlikDSB1FiberAndCube.pdf" );
+
+}
+
+
+
+
 void ShashlikFiberAnalysis() {
 
 //   MakeTimeResolutionPlot("cpt_aug_run_074.ana.root","TOF_ShashlikDSB1Fiber_Electron_16GeV",16,true,74,false);
@@ -418,11 +528,12 @@ void ShashlikFiberAnalysis() {
   //*************************************
   //Best Results Here for Paper
   //*************************************
-  MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_aug_run_090And091.ana.root","TOF_ShashlikDSB1Fiber_Electron_32GeV",32,true,90, true);
-  MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_aug_run_088.ana.root","TOF_ShashlikDSB1Fiber_Electron_16GeV",16,true,88, false);
-  MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_aug_run_089.ana.root","TOF_ShashlikDSB1Fiber_Electron_8GeV",8,true,89, false);
-  MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_aug_run_092.ana.root","TOF_ShashlikDSB1Fiber_Electron_4GeV",4,true,92, false);
-  MakeTimeResolutionVsEnergyPlot_DSB();
+//   MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_aug_run_090And091.ana.root","TOF_ShashlikDSB1Fiber_Electron_32GeV",32,true,90, true);
+//   MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_aug_run_088.ana.root","TOF_ShashlikDSB1Fiber_Electron_16GeV",16,true,88, false);
+//   MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_aug_run_089.ana.root","TOF_ShashlikDSB1Fiber_Electron_8GeV",8,true,89, false);
+//   MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_aug_run_092.ana.root","TOF_ShashlikDSB1Fiber_Electron_4GeV",4,true,92, false);
+//   MakeTimeResolutionVsEnergyPlot_DSB();
+  MakeTimeResolutionVsEnergyPlot_DSBAndCube();
 
 
   //*************************************
@@ -432,6 +543,8 @@ void ShashlikFiberAnalysis() {
 //   MakeTimeResolutionPlot("cpt_may_run_132.ana.root","TOF_ShashlikY11Fiber_Electron_8GeV",8,false);
 //   MakeTimeResolutionPlot("cpt_may_run_133.ana.root","TOF_ShashlikY11Fiber_Electron_16GeV",16,false);
 //   MakeTimeResolutionVsEnergyPlot_Y11();
+
+
 
 
 }
