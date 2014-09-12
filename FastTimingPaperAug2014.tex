@@ -4,6 +4,7 @@
 
 \usepackage[affil-it]{authblk}
 \usepackage[percent]{overpic}
+\usepackage{float}
 
 %\usepackage{ifpdf}
 %\ifpdf 
@@ -22,10 +23,17 @@
 %    \usepackage{hyperref}       % to simplify the use of \href
 %\fi 
 
-\title{Fast Timing Sexy Title}
+\title{On timing properties of LYSO-based calorimetery Or\\Zur Zeitmessungseigenschaft von LYSO-Kalorimetern.}
 
-\author[1]{D.~Anderson, A.~Apresyan, A.~Bornheim, J.~Duarte, C.~Pena, M.~Spiropulu, S.~Xie}
+\author[1]{D.~Anderson}
+\author[1]{A.~Apresyan}
+\author[1]{A.~Bornheim}
+\author[1]{J.~Duarte}
+\author[1]{ C.~Pena}
 \author[2]{A.~Ronzhin}
+\author[1]{M.~Spiropulu}
+\author[1]{J.~Trevor}
+\author[1]{S.~Xie}
 \affil[1]{California Institute of Technology, Pasadena, CA, USA}
 \affil[2]{Fermi National Accelerator Laboratory, Batavia, USA}
 
@@ -34,20 +42,17 @@
 \begin{document}
 
 \maketitle
-\abstract{
-We present studies of the timing performance of a variety of
-LYSO-based calorimeteric detectors, fully characterizing
-the contributions of the dominant factors affecting the
-time of flight resolution. For certain types of 
-LYSO-based calorimeter designs, we demonstrate that 
-a time of flight resolution of $30$~ps is achievable,
-in particular limiting the contribution of event-by-event
-fluctuations in the scintillation process and optical
-transit to less than $20$~ps. Important applications
-of such precision timing calorimeters in the context
-of detector upgrades for the High Luminosity LHC at
-CERN to mitigate the detrimental effects of large pileup
-to object and event reconstruction is discussed. 
+\abstract{ Studies of the timing performance of a variety of LYSO-based
+  calorimeteric detectors are presented, fully characterizing the
+  dominant contributions affecting the time of flight resolution. For
+  certain types of LYSO-based calorimeter designs, we demonstrate that a
+  time of flight resolution of $30$~ps is achievable, in particular
+  limiting the contribution of event-by-event fluctuations in the
+  scintillation process and optical transit to less than
+  $20$~ps. Important applications of precision timing calorimeters
+  in the context of detector upgrades for the High Luminosity LHC at
+  CERN, such as mitigation of the detrimental effects of large pileup to object and
+  event reconstruction is discussed.
 
  }
 
@@ -67,7 +72,7 @@ challenges for the ability to reconstruct events of interest, as the
 likelihood for confusion due to contamination from particles produced
 in different pileup events significantly increases. The ability to
 discriminate between jets produced in the event of interest,
-particularly for those associated with the vector-boson fusion process,
+particularly those associated with the vector-boson fusion process,
 from jets produced by pileup collisions, and the missing transverse energy
 resolution are two of the most important performance benchmarks
 that will be severely degraded.
@@ -92,7 +97,7 @@ To demonstrate proof of principle, we focus our studies on
 measurements of the time of flight using sampling calorimeters
 based on LYSO crystals. Besides the advantage of very high light
 yield ($\sim 30$K photons/MeV), LYSO is also radiation tolerant and
-thus is the main active element of one of the options considered 
+thus is the active element of one of the options considered 
 for the CMS upgrade for the HL-LHC. In Figure~\ref{fig:ScintillatorTiming} 
 we present a simplified illustration of the major contributions to the 
 precision of the timing measurement using a monolithic crystal calorimeter.
@@ -119,7 +124,7 @@ boxes and in the text.}
 \end{figure}
 
 In past studies~\cite{MCPFastCaloNIMA}, we have measured the timing resolution
-associated with the photodetectors to be
+associated with the MCP-PMT photodetectors used in this paper to be
 about $11$~ps, and the electronic time resolution
 of the DAQ system to be about $6$~ps. By measuring the time of flight
 resolution at different absorber thicknesses for electron beams with
@@ -128,7 +133,7 @@ time of arrival of the front of an electromagnetic shower
 can be determined with a precision better than $20$~ps.
 Thus, we conclude that the associated time scale
 $t_{C}$ does not contribute significantly to the time
-reslution for such an experimental setup. 
+resloution for such an experimental setup. 
 
 To complete the characterization of the time of flight resolution
 for a crystal based calorimeter, we report here on the results
@@ -232,7 +237,7 @@ from an 8 GeV electron run.}
 Event selection and pulse cleaning procedures were used to eliminate abnormal
 pulses in the readout. Large signals above 500 mV were also rejected because
 they saturated the DRS4 inputs. Only pulses with amplitude 
-larger than 20 mV was used for time of flight measurements in order to 
+larger than 20 mV were used for time of flight measurements in order to 
 avoid any impact of the noise from the DRS waveform digitizer DAQ system. 
 Events containing more than one pulse within our readout window of 200 ns 
 were not used. 
@@ -284,7 +289,7 @@ lead, about $4.5$ radiation lengths in thickness, acting
 as a radiator and a LYSO crystal cube with linear dimensions 
 of $1.7$~cm. The LYSO crystal is wrapped in Tyvek and  
 coupled with optical grease to a Hamamatsu R3809 MCP-PMT
-which is used to extract the scintillation photon signal. 
+which is used to extract the scintillation signal. 
 A Photek 240 MCP-PMT is placed upstream of the calorimeter and 
 is used to measure the reference time. A schematic diagram
 and a photograph of the experimental setup
@@ -347,7 +352,7 @@ measured time of flight distributions are shown in Figure~\ref{fig:LYSOCubeTOF}.
 We achieve the best time of flight resolution of $34$~ps for electrons
 with beam energy of $32$~GeV.
 
-\begin{figure}[h] \centering
+\begin{figure}[H] \centering
 \includegraphics[width=0.45\textwidth]{figs/TOF_Electron_LYSOCube_4GeV} 
 \includegraphics[width=0.45\textwidth]{figs/TOF_Electron_LYSOCube_8GeV} 
 \includegraphics[width=0.45\textwidth]{figs/TOF_Electron_LYSOCube_16GeV} 
@@ -375,7 +380,8 @@ Given that we control the combined contribution to the time of flight
 resolution of the electromagnetic shower
 fluctuations, the photodetector time resolution, and the DAQ electronics
 to about $25$~ps~\cite{MCPFastCaloNIMA} and that the geometric contribution 
-from the transverse size of the trigger is about $12$~ps,
+from the transverse size of the trigger is about $12$~ps (assuming that
+the speed of light inside LYSO is $\sim1/3$c),
 we infer that the contribution of the scintillation mechanism in LYSO
 to the time of flight resolution is less than $20$~ps.
 
@@ -397,7 +403,7 @@ the scintillation light, while a Photek 240 MCP-PMT is used as the reference
 time detector. 
 
 
-\begin{figure}[h] \centering
+\begin{figure}[H] \centering
 \includegraphics[width=0.45\textwidth]{figs/ShashlikFiberSetupSchematic} 
 \includegraphics[width=0.45\textwidth]{figs/ShashlikFiberSetupPhoto} 
 \caption{ A schematic diagram of the experimental setup for the
@@ -419,7 +425,7 @@ calorimeter. In Figure~\ref{fig:FiberPulseComparison} we show
 the pulse shapes averaged over a few hundred events obtained 
 using DSB1 fibers and Y11 fibers, plotted in blue and red respectively,
 compared with the average pulse shape obtained from direct optical 
-coupling to the edge of one of the LYSO tiles, plotted in green.
+coupling of the photodector to the edge of one of the LYSO tiles, plotted in green.
 We find that the rise time of the pulse shape obtained using the 
 DSB1 fibers, at about $3.5$~ns, is significantly faster than the rise time
 of the pulse obtained using the Y11 fibers, which is about $10$~ns,
@@ -430,7 +436,7 @@ optimizing the time of flight resolution for the design of
 this type of calorimeter, and that the DSB1 fiber 
 already provides a reasonably good choice.
 
-\begin{figure}[h] \centering
+\begin{figure}[H] \centering
 \includegraphics[width=0.45\textwidth]{figs/FiberPulses} 
 \includegraphics[width=0.45\textwidth]{figs/FiberPulsesZoom} 
 \caption{ Pulse shapes digitized by the DRS4 board and averaged over several hundred events 
@@ -459,7 +465,7 @@ with this setup is $104$~ps. As the measurement is photo-statistics
 limited, to improve on this result in the future, work is needed
 on improving the light collection efficiency. 
 
-\begin{figure}[h] \centering
+\begin{figure}[H] \centering
 \includegraphics[width=0.45\textwidth]{figs/TOF_ShashlikDSB1Fiber_Electron_32GeV_energy} 
 \caption{ Histogram of the pulse integral for events recorded using
 the LYSO-tungsten shashlik calorimeter using the DSB1 fibers for 
@@ -469,7 +475,7 @@ and background is visible in the spectrum as a result. }
 \label{fig:ShashlikFiberEnergy32GeV}
 \end{figure}
 
-\begin{figure}[h] \centering
+\begin{figure}[H] \centering
 \includegraphics[width=0.45\textwidth]{figs/TOF_ShashlikDSB1Fiber_Electron_4GeV} 
 \includegraphics[width=0.45\textwidth]{figs/TOF_ShashlikDSB1Fiber_Electron_8GeV} 
 \includegraphics[width=0.45\textwidth]{figs/TOF_ShashlikDSB1Fiber_Electron_16GeV} 
@@ -479,7 +485,7 @@ using DSB1 fibers for electron beams with varying beam energies. }
 \label{fig:ShashlikFiberTOF}
 \end{figure}
 
-\begin{figure}[h] \centering
+\begin{figure}[H] \centering
 \includegraphics[width=0.45\textwidth]{figs/TimeResolutionVsEnergy_ShashlikDSB1Fiber} 
 \caption{ The time of flight resolution measured using the LYSO-tungsten shashlik
 calorimeter with signal extracted using DSB1 fibers is plotted as a function of
@@ -493,12 +499,12 @@ are directly coupled to the edge of two subsequent LYSO layers of the
 shashlik calorimeter and scintillation light is directly transported 
 to the photodetector through the edge of the tile layers. 
 A schematic diagram and corresponding photograph of
-the experimental setup is shown in Figure~\ref{fig:ShashlikSideReadout}.
+the experimental setup is shown in Figure~\ref{fig:ShashlikSideReadoutSetup}.
 In Figure~\ref{fig:ShashlikSideReadoutExposedLayersPhoto}, we show
 a zoomed in photograph of the exposed LYSO layers, from which the 
 scintillation light signal is extracted.
 
-\begin{figure}[h] \centering
+\begin{figure}[H] \centering
 \includegraphics[width=0.45\textwidth]{figs/ShashlikSideReadoutSetupSchematic} 
 \includegraphics[width=0.45\textwidth]{figs/ShashlikSideReadoutPhotoB} 
 \caption{ A schematic diagram of the experimental setup for the
@@ -508,7 +514,7 @@ with a photograph of the experimental setup. }
 \label{fig:ShashlikSideReadoutSetup}
 \end{figure}
 
-\begin{figure}[h] \centering
+\begin{figure}[H] \centering
 \includegraphics[width=0.30\textwidth]{figs/ShashlikSideReadoutPhotoA} 
 \caption{ A photograph of the two exposed LYSO layers is shown.
 The scintillation light signal is extracted by optically coupling
@@ -532,7 +538,7 @@ The best time of flight resolution that we obtain is about $55$~ps, and
 fitting the result to the sum of a $1/\sqrt{E}$ term and a constant term,
 we find a constant term of about $30$~ps with a statistical uncertainty of $30\%$. 
 
-\begin{figure}[h] \centering
+\begin{figure}[H] \centering
 \includegraphics[width=0.45\textwidth]{figs/TOF_ShashlikSideReadout_Electron_8GeV} 
 \includegraphics[width=0.45\textwidth]{figs/TOF_ShashlikSideReadout_Electron_16GeV} 
 \includegraphics[width=0.45\textwidth]{figs/TOF_ShashlikSideReadout_Electron_32GeV} 
@@ -541,7 +547,7 @@ with signal extracted from the edges of two LYSO layers. }
 \label{fig:ShashlikSideReadoutTOF}
 \end{figure}
 
-\begin{figure}[h] \centering
+\begin{figure}[H] \centering
 \includegraphics[width=0.45\textwidth]{figs/TimeResolutionVsEnergy_ShashlikSideReadout} 
 \caption{ The time of flight resolution measured using the LYSO-tungsten shashlik calorimeter
 with light signals extracted by direct optical coupling to the edges of two LYSO layers 
@@ -592,15 +598,14 @@ have completed the characterization of the main factors
 contributing to the time of flight resolution in a LYSO-based
 calorimeter. The effects of event-by-event fluctuations in
 the electromagnetic shower as well as the scintillation process 
-is controlled to within $20$~ps. The effects of the optical transit
+are controlled to within $20$~ps. The effects of the optical transit
 can be controlled to within $20$ or $30$~ps, depending on the
-exact scheme for extracting the light signal with which a
-time measurement is made. Through the comparison of results
+exact scheme for extracting the light signal. Through the comparison of results
 using these different light extraction schemes, we find that at a 
 given light yield the effect of optical transit fluctuations
 is of considerable importance, but that these effects
 have a tendency to decrease in importance as the light yield
-significantly increases. This effect can be seen in 
+increases. This effect can be seen in 
 Figure~\ref{fig:ShashlikFiberAndCubeTOF} where we show
 the dependence of the time of flight resolution
 for the shashlik cell with light extraction through the
@@ -616,7 +621,7 @@ we have not observed any evidence of an
 ultimate limitation in resolution resulting from
 optical transit fluctuations.
 
-\begin{figure}[h] \centering
+\begin{figure}[H] \centering
 \includegraphics[width=0.55\textwidth]{figs/TimeResolutionVsEnergy_ShashlikDSB1FiberAndCube} 
 \caption{ Time of flight distributions for the LYSO-tungsten shashlik calorimeter
 with signal extracted from the edges of two LYSO layers. } 
@@ -638,9 +643,7 @@ good beam delivery and control. We thank Randy Ruchti for providing us
 with the DSB1 fibers used in the measurements, and Eileen Hahn for the
 high quality work in polishing the fibers. Thanks to Ewa Skup and Geoff
 Savage for help with operation of Cherenkov counters, and to Todd Nobel
-for organizing and providing supporting equipment at FTBF. We are
-grateful to Jason Trevor for design and construction of special supports
-for various photodetectors and shashlik calorimeter assembly.
+for organizing and providing supporting equipment at FTBF.
 
 
 \bibliography{FastTimingPaperAug2014}{}
