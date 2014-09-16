@@ -305,8 +305,8 @@ A plastic scintillator, approximately $2$~mm by $2$~mm in cross sectional area
 and placed upstream of the reference time detector, is used to trigger
 the DAQ readout on the DRS waveform digitizer and ensures that any
 time of flight measurement is constrained to within a $2$~mm region,
-which limits the time jitter due to the geometry to about $12$~ps, assuming that
-the speed of light inside LYSO is $\sim 1/2$c. 
+which limits the time jitter due to the geometry to about $12$~ps, 
+assuming that the speed of light inside LYSO is about $\mathrm{c}/1.8$.
 Electron events are identified by requiring a signal with amplitude
 larger than $10$~mV in the Cherenkov counter.
 Finally, large lead bricks are placed upstream of the Hamamatsu
@@ -515,15 +515,17 @@ photodetectors. }
 \label{fig:ShashlikSideReadoutExposedLayersPhoto}
 \end{figure}
 
-With the intention to study the relationship between the impact of the 
-optical transit time jitter and the impact of limited photo-statistics,
-we minimize the distance that the scintillation light
-must travel to reach the photodetector in this setup and thereby minimize the
-impact of optical transit on the time resolution but reduce the photostatistics 
-as we collect light from only a fraction of the edges of two LYSO layers. 
-In Figure~\ref{fig:ShashlikSideReadoutTOF}, we show the 
-time of flight distributions for electron beams at various energies, 
-fitted to gaussian functions. The resulting
+
+This setup allows us to study the relationship between the impact of the 
+optical transit time jitter and the impact of limited photo-statistics.  
+By placing the photodetectors in direct contact with the edges of two 
+LYSO layers, we minimize the distance that scintillation light must 
+travel to reach the photodetectors, and thereby reduce the impact 
+of optical transit on the time resolution. This also reduces the 
+available photo-statistics, as we collect light from only a small 
+fraction of the shashlik cell. In Figure~\ref{fig:ShashlikSideReadoutTOF}, 
+we show the time of flight distributions for electron beams at 
+various energies, fitted to gaussian functions. The resulting
 $\sigma$ parameter of the gaussian is plotted as a function of the
 beam energy in Figure~\ref{fig:ShashlikSideReadoutTOFResolutionVsEnergy}.
 The best time  resolution that we obtain is about $55$~ps, and
@@ -614,7 +616,7 @@ optical transit fluctuations.
 
 \begin{figure}[H] \centering
 \includegraphics[width=0.55\textwidth]{figs/TimeResolutionVsEnergy_ShashlikDSB1FiberAndCube} 
-\caption{Comparison of time resolutions obtained with the 1.7 cm$^3$ LYSO cube (blue), and the LYSO-tungsten shashlik calorimeter with light extracted using DSB1 fibers (red). Note that x-axis in this figure displays the amplitude of the signal as measured by the DRS4 board.} 
+\caption{Comparison of time resolutions obtained with the $(1.7$~cm$)^{3}$ LYSO cube (blue), and the LYSO-tungsten shashlik calorimeter with light extracted using DSB1 fibers (red). The x-axis in this figure displays the amplitude of the signal as measured by the DRS4 board.}
 \label{fig:ShashlikFiberAndCubeTOF}
 \end{figure}
 
@@ -628,7 +630,8 @@ and to make improvements to the light collection efficiency
 for such types of detectors.
 
 \section{Acknowledgements}
-We would like to thank Erik Ramberg and Sergey Los for their support of our work, and Aria Soha and the FTBF test beam facility for the
+We would like to thank Erik Ramberg and Sergey Los for their support 
+of our work, and Aria Soha and the FTBF test beam facility for the
 good beam delivery and control. We thank Randy Ruchti for providing us
 with the DSB1 fibers used in the measurements, and Eileen Hahn for the
 high quality work in polishing the fibers. Thanks to Ewa Skup and Geoff
