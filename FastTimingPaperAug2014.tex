@@ -6,6 +6,7 @@
 \usepackage[percent]{overpic}
 \usepackage{float}
 \usepackage{hyperref}
+\usepackage[numbers,sort&compress]{natbib}
 
 %\usepackage{ifpdf}
 %\ifpdf 
@@ -47,10 +48,7 @@
   calorimeteric detectors are presented, fully characterizing the
   dominant contributions affecting the time resolution. For
   certain types of LYSO-based calorimeter designs, we demonstrate that a
-  time resolution of $30$~ps is achievable, in particular
-  limiting the contribution of event-by-event fluctuations in the
-  scintillation process and optical transit to less than
-  $20$~ps. Important applications of precision timing calorimeters
+  time resolution of $30$~ps is achievable. Important applications of precision timing calorimeters
   in the context of detector upgrades for the High Luminosity LHC at
   CERN, such as mitigation of the detrimental effects of large pileup to object and
   event reconstruction are discussed.
@@ -96,26 +94,50 @@ particles with a calorimetric device.
 To demonstrate proof of principle, we focus our studies on
 measurements of the time of flight using sampling calorimeters
 based on LYSO crystals. Besides the advantage of very high light
-yield ($\sim 30$K photons/MeV)~\cite{LYSOProperties}, LYSO is also radiation tolerant and
+yield ($\sim 30$K photons/MeV)~\cite{LYSOProperties}, LYSO is also radiation tolerant~\cite{5402126, 4291695, 5402125, Dissertori:2013rma} and
 thus is the active element of one of the options considered 
-for the CMS upgrade for the HL-LHC. In Figure~\ref{fig:ScintillatorTiming} 
-we present a simplified illustration of the major contributions to the 
-precision of the timing measurement using a monolithic crystal calorimeter.
-Upon entering the crystal the photon converts and begins to shower,
-which produces scintillation light in the crystal. The time scale
-between entering the crystal and the first conversion is referred to
-as $t_C$. The time scale associated with the rise time of the scintillation 
-light signal and the propagation of the electromagnetic shower is denoted
-by $t_S$. Typically the scintillation light is collected by a photodetector
-located at the back end of the calorimeter cell. The time scale associated
-with the optical transit of the scintillation light to the location of the
-photodetector is denoted by $t_T$. Finally, the photo detector and
-its readout system have characteristic time constants $t_P$ and $t_D$.
-Each of the above time scales have fluctuations or jitter on an event-by-event
-level, which contribute to the time resolution.
+for the CMS upgrade for the HL-LHC. 
+
+In Figure~\ref{fig:ScintillatorTiming} we present a simplified illustration 
+of the major contributions to the precision of the timing measurement using a 
+monolithic crystal calorimeter.  Upon entering the crystal the photon travels, 
+at the speed of light, a distance $d$ before it interacts and begins to shower, 
+which produces scintillation light in the crystal. The period of time between the 
+entry of the photon into the crystal and the first interaction is denoted by $t_I$. 
+The time period associated with the conversion of the incident photon to 
+scintillation light is denoted by $t_S$. The scintillation light travels from 
+the point of interaction to the photodetector at the velocity $c/n$ (where $n$ 
+is the effective index of refraction of the crystal)~\cite{Moses}. The time associated 
+with the propagation of the scintillation light from the point of interaction 
+to the photodetector is denoted by $t_P$. Thus, the total time period ($t_I+t_S+t_P$) 
+between the entry of the incident photon into the crystal and the arrival of 
+scintillation light at the photodetector will vary with the interaction depth $d$. 
+Once the scintillation light reaches the photodector, the optical photons are 
+converted into an electrical signal. The time period associated with this process 
+is known as the photodetector signal transit time, $t_T$.  Finally, the readout 
+system has a characteristic time constant $t_D$. Each of time periods described 
+above will fluctuate or jitter on an event-by-event basis, contributing to the 
+time resolution.
+
+
+%In Figure~\ref{fig:ScintillatorTiming} 
+%we present a simplified illustration of the major contributions to the 
+%precision of the timing measurement using a monolithic crystal calorimeter.
+%Upon entering the crystal the photon converts and begins to shower,
+%which produces scintillation light in the crystal. The time scale
+%between entering the crystal and the first conversion is referred to
+%as $t_C$. The time scale associated with the rise time of the scintillation 
+%light signal and the propagation of the electromagnetic shower is denoted
+%by $t_S$. Typically the scintillation light is collected by a photodetector
+%located at the back end of the calorimeter cell. The time scale associated
+%with the optical transit of the scintillation light to the location of the
+%photodetector is denoted by $t_T$. Finally, the photo detector and
+%its readout system have characteristic time constants $t_P$ and $t_D$.
+%Each of the above time scales have fluctuations or jitter on an event-by-event
+%level, which contribute to the time resolution.
 
 \begin{figure}[h] \centering
-\includegraphics[width=0.85\textwidth]{figs/ScintillatorTiming} \caption{Factors
+\includegraphics[width=0.85\textwidth]{figs/ScintillatorTiming_v2} \caption{Factors
 influencing the precision of the timing measurement with a monolithic, large
 scintillating crystal. The incident particle impinges on the crystal face from
 the left. Characteristic times of various factors are defined in the colored
@@ -170,7 +192,7 @@ Two types of multi-channel plate photomultiplier
 tubes or MCP-PMT photodetectors 
 are used, one produced by Hamamatsu 
 (model R3809-52)~\cite{HamamatsuMCP3809}, and one
-produced by Photek (model PMT240)~\cite{Photek240}. 
+produced by Photek (model PMT240)~\cite{Photek240}. Using the same technique as in~\cite{MCPFastCaloNIMA}, we measured the time resolution of the Hamamatsu MCP-PMT to be $\sim 14$ psec. 
 A version 4 DRS4 waveform digitizer evaluation board~\cite{DRS4} was
 used as the primary DAQ system, connected to a laptop via
 USB interface. All experimental beam studies were performed
@@ -260,8 +282,7 @@ scintillation light to reach the location of the photodetector
 affect both the speed of the signal formation
 as well as the time jitter. We characterize the impact of
 these two effects on the time resolution using
-two independent experimental setups which isolate the
-two components. To study the effect of scintillation
+two independent experimental setups. To study the effect of scintillation
 we perform time resolution measurements
 for electron beams using a sampling calorimeter composed of a 
 $(1.7\mathrm{ cm})^{3}$ LYSO cube as the active 
@@ -374,10 +395,13 @@ and fitted to the sum of a $1/\sqrt{E}$ term and a constant term. Note that the 
 Given that we control the combined contribution to the time 
 resolution of the electromagnetic shower
 fluctuations, the photodetector time resolution, and the DAQ electronics
-to about $25$~ps~\cite{MCPFastCaloNIMA} and that the geometric contribution 
-from the transverse size of the trigger is about $12$~ps,
-we infer that the contribution of the scintillation mechanism in LYSO
-to the time resolution is less than $20$~ps.
+to about $25$~ps~\cite{MCPFastCaloNIMA}, we infer that the combined contribution to the time resolution from the $t_I$ and $t_S$ is about 20 psec. In our future studies we plan to further separate these components, in order to measure the contribution from the scintillation process.
+
+
+% and taking into account that the geometric contribution 
+%from the transverse size of the trigger and the LYSO cube are at the order of $12$~ps,
+%we infer that the contribution of the scintillation mechanism in LYSO
+%to the time resolution is less than $20$~ps.
 
 
 \subsection{Studies of Time Jitter from Optical Transport}
@@ -417,7 +441,7 @@ comparing the signal pulses obtained using two different types
 of wavelength shifting fiber in the same LYSO-tungsten shashlik
 calorimeter. In Figure~\ref{fig:FiberPulseComparison} we show
 the pulse shapes averaged over a few hundred events obtained 
-using DSB1 fibers and Y11 fibers, plotted in blue and red respectively,
+using DSB1 fibers~\cite{Albrecht} and Y11 fibers, plotted in blue and red respectively,
 compared with the average pulse shape obtained from direct optical 
 coupling of the photodector to the edge of one of the LYSO tiles, plotted in green.
 We find that the rise time of the pulse shape obtained using the 
