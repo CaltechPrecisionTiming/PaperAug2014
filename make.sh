@@ -1,0 +1,3 @@
+pdflatex FastTimingPaperAug2014;
+bibtex FastTimingPaperAug2014;
+pdflatex FastTimingPaperAug2014;
