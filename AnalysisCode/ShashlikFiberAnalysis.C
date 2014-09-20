@@ -300,7 +300,7 @@ void MakeTimeResolutionVsEnergyPlot_DSB() {
   graph->SetTitle("");
   graph->GetXaxis()->SetTitle("Electron Beam Energy [GeV]");
 //   graph->GetXaxis()->SetTitle("Amplitude");
-  graph->GetYaxis()->SetTitle("Time of Flight Resolution [ps]");
+  graph->GetYaxis()->SetTitle("Time Resolution [ps]");
   graph->GetYaxis()->SetTitleOffset(1.25);
 
 
@@ -532,8 +532,8 @@ void ShashlikFiberAnalysis() {
 //   MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_aug_run_088.ana.root","TOF_ShashlikDSB1Fiber_Electron_16GeV",16,true,88, false);
 //   MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_aug_run_089.ana.root","TOF_ShashlikDSB1Fiber_Electron_8GeV",8,true,89, false);
 //   MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_aug_run_092.ana.root","TOF_ShashlikDSB1Fiber_Electron_4GeV",4,true,92, false);
-//   MakeTimeResolutionVsEnergyPlot_DSB();
-  MakeTimeResolutionVsEnergyPlot_DSBAndCube();
+   MakeTimeResolutionVsEnergyPlot_DSB();
+  // MakeTimeResolutionVsEnergyPlot_DSBAndCube();
 
 
   //*************************************

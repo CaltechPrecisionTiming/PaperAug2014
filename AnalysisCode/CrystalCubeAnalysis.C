@@ -205,7 +205,7 @@ void MakeTimeResolutionVsEnergyPlot() {
   graph->SetTitle("");
   graph->GetXaxis()->SetTitle("Electron Beam Energy [GeV]");
   //graph->GetXaxis()->SetTitle("Amplitude [mV]");
-  graph->GetYaxis()->SetTitle("Time of Flight Resolution [ps]");
+  graph->GetYaxis()->SetTitle("Time Resolution [ps]");
   graph->GetYaxis()->SetTitleOffset(1.1);
 
 
@@ -234,10 +234,10 @@ void MakeTimeResolutionVsEnergyPlot() {
 
 void CrystalCubeAnalysis() {
 
-  MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_aug_run_070.ana.root","TOF_Electron_LYSOCube_4GeV",4,false);
-  MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_aug_run_069.ana.root","TOF_Electron_LYSOCube_8GeV", 8,false);
-  MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_aug_run_064.ana.root","TOF_Electron_LYSOCube_16GeV",16,false);
-  MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_aug_run_065-068.ana.root","TOF_Electron_LYSOCube_32GeV",32,true);
+  // MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_aug_run_070.ana.root","TOF_Electron_LYSOCube_4GeV",4,false);
+  // MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_aug_run_069.ana.root","TOF_Electron_LYSOCube_8GeV", 8,false);
+  // MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_aug_run_064.ana.root","TOF_Electron_LYSOCube_16GeV",16,false);
+  // MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_aug_run_065-068.ana.root","TOF_Electron_LYSOCube_32GeV",32,true);
   
   MakeTimeResolutionVsEnergyPlot();
 }

@@ -183,7 +183,7 @@ void MakeTimeResolutionVsEnergyPlot() {
 
   graph->SetTitle("");
   graph->GetXaxis()->SetTitle("Electron Beam Energy [GeV]");
-  graph->GetYaxis()->SetTitle("Time of Flight Resolution [ps]");
+  graph->GetYaxis()->SetTitle("Time Resolution [ps]");
   graph->GetYaxis()->SetTitleOffset(1.35);
   graph->GetYaxis()->SetRangeUser(0,150);
 
@@ -224,9 +224,9 @@ void ShashlikSideReadoutAnalysis() {
   //*************************************
   //Best Results Here for Paper
   //*************************************
-  MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_may_run_137.ana.root","TOF_ShashlikSideReadout_Electron_8GeV",8,137);
-  MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_may_run_140.ana.root","TOF_ShashlikSideReadout_Electron_16GeV",16,140);  
-  MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_may_run_141.ana.root","TOF_ShashlikSideReadout_Electron_32GeV",32,141);
+  // MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_may_run_137.ana.root","TOF_ShashlikSideReadout_Electron_8GeV",8,137);
+  // MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_may_run_140.ana.root","TOF_ShashlikSideReadout_Electron_16GeV",16,140);  
+  // MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_may_run_141.ana.root","TOF_ShashlikSideReadout_Electron_32GeV",32,141);
   MakeTimeResolutionVsEnergyPlot();
 
 
