@@ -77,7 +77,7 @@ void MakeTimeResolutionPlot(string filename, string plotname, int energy, bool p
 
   TH1F *dt = new TH1F("dt","; #Delta t [ns]; Number of Events", 100, -1,1);
   TH1F *histIntegral;
-  histIntegral = new TH1F("histIntegral","; Pulse Integral [V];Number of Events",25,0,200);
+  histIntegral = new TH1F("histIntegral","; Pulse Integral [V*ns];Number of Events",25,0,200);
 
   //read all entries and fill the histograms
   Long64_t nentries = tree->GetEntries();
@@ -147,7 +147,7 @@ void MakeTimeResolutionPlot(string filename, string plotname, int energy, bool p
     
     histIntegral->SetAxisRange(histIntegral->GetMean()-2.0*fabs(histIntegral->GetMean()),histIntegral->GetMean()+2.0*fabs(histIntegral->GetMean()),"X");
     histIntegral->SetTitle("");
-    histIntegral->GetXaxis()->SetTitle("Pulse Integral [V]");
+    histIntegral->GetXaxis()->SetTitle("Pulse Integral [V*ns]");
     histIntegral->GetYaxis()->SetTitle("Number of Events");
     histIntegral->GetYaxis()->SetTitleOffset(1.25);
     histIntegral->SetMaximum(histIntegral->GetMaximum()*1.2);
@@ -237,7 +237,7 @@ void CrystalCubeAnalysis() {
   // MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_aug_run_070.ana.root","TOF_Electron_LYSOCube_4GeV",4,false);
   // MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_aug_run_069.ana.root","TOF_Electron_LYSOCube_8GeV", 8,false);
   // MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_aug_run_064.ana.root","TOF_Electron_LYSOCube_16GeV",16,false);
-  // MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_aug_run_065-068.ana.root","TOF_Electron_LYSOCube_32GeV",32,true);
+  MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_aug_run_065-068.ana.root","TOF_Electron_LYSOCube_32GeV",32,true);
   
-  MakeTimeResolutionVsEnergyPlot();
+  //MakeTimeResolutionVsEnergyPlot();
 }

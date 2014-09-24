@@ -87,11 +87,11 @@ void MakeTimeResolutionPlot(string filename, string plotname, int energy, int is
   TH1F *dt;
   TH1F *histIntegral;
   if (energy == 4 | energy == 8 ) {
-    histIntegral = new TH1F("histIntegral","; Pulse Integral [V];Number of Events",150,0,300);
+    histIntegral = new TH1F("histIntegral","; Pulse Integral [V*ns];Number of Events",150,0,300);
   } else if (energy == 16) {
-    histIntegral = new TH1F("histIntegral","; Pulse Integral [V];Number of Events",75,0,300);
+    histIntegral = new TH1F("histIntegral","; Pulse Integral [V*ns];Number of Events",75,0,300);
   } else {
-    histIntegral = new TH1F("histIntegral","; Pulse Integral [V];Number of Events",50,0,200);
+    histIntegral = new TH1F("histIntegral","; Pulse Integral [V*ns];Number of Events",50,0,200);
   }
 
   if (run <86) {
@@ -241,7 +241,7 @@ void MakeTimeResolutionPlot(string filename, string plotname, int energy, int is
 
     histIntegral->SetAxisRange((histIntegralFitMin+histIntegralFitMax)*0.2,(histIntegralFitMin+histIntegralFitMax)*0.75,"X");
     histIntegral->SetTitle("");
-    histIntegral->GetXaxis()->SetTitle("Pulse Integral [V]");
+    histIntegral->GetXaxis()->SetTitle("Pulse Integral [V*ns]");
     histIntegral->GetYaxis()->SetTitle("Number of Events");
     histIntegral->GetYaxis()->SetTitleOffset(1.25);
     histIntegral->Draw();
@@ -528,11 +528,11 @@ void ShashlikFiberAnalysis() {
   //*************************************
   //Best Results Here for Paper
   //*************************************
-//   MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_aug_run_090And091.ana.root","TOF_ShashlikDSB1Fiber_Electron_32GeV",32,true,90, true);
+   MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_aug_run_090And091.ana.root","TOF_ShashlikDSB1Fiber_Electron_32GeV",32,true,90, true);
 //   MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_aug_run_088.ana.root","TOF_ShashlikDSB1Fiber_Electron_16GeV",16,true,88, false);
 //   MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_aug_run_089.ana.root","TOF_ShashlikDSB1Fiber_Electron_8GeV",8,true,89, false);
 //   MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_aug_run_092.ana.root","TOF_ShashlikDSB1Fiber_Electron_4GeV",4,true,92, false);
-   MakeTimeResolutionVsEnergyPlot_DSB();
+  //MakeTimeResolutionVsEnergyPlot_DSB();
   // MakeTimeResolutionVsEnergyPlot_DSBAndCube();
 
 
