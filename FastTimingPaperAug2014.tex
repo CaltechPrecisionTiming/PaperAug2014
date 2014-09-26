@@ -176,8 +176,9 @@ lined with copper foil, providing RF shielding. A $2$x$2$~$\mathrm{mm}^{2}$
 scintillator is placed inside the box at the upstream extremity and used to
 trigger the DAQ readout, providing a relatively strict constraint on the
 location and directionality of the beam particles used in the time of flight
-studies. Finally, the differential Cherenkov counter located upstream of our
-experimental hall, is used for electron identification. 
+studies. Finally, the differential Cherenkov counter provided by the FTBF
+facility and located upstream of our experimental hall, is used for electron
+identification. 
 
 \section{Event Selection and Analysis}
 
@@ -208,7 +209,7 @@ parameters used.
 \caption{Sample pulses as digitized by the DRS4 board. 
 On the left is a  pulse from the reference Photek 240 MCP-PMT, 
 and on the right is a pulse from the Hamamatsu R3809 MCP-PMT
-optically coupled to a $(1.7\mathrm{ cm})^3$ LYSO crystal 
+optically coupled to a (1.7~cm)$^{3}$ LYSO crystal 
 recorded during an 8 GeV electron run.} 
 \label{fig:PulseShapes}
 \end{figure}
@@ -226,7 +227,7 @@ the $200$~ns readout window are not used.
 \caption{Sample fits used to assign timestamps to digitized MCP-PMT pulses. 
 On the left is a pulse from the reference Photek 240 MCP-PMT, and
 on the right is a pulse from the Hamamatsu R3809 MCP-PMT
-optically coupled to a $(1.7\mathrm{ cm})^3$  LYSO crystal
+optically coupled to a (1.7~cm)$^{3}$  LYSO crystal
 recorded during an 8 GeV electron run.}
 \label{fig:PulseFits}
 \end{figure}
@@ -267,7 +268,7 @@ effects are less dominant.
 
 We study the combined impact of the shower profile fluctuations, the
 scintillation mechanism in LYSO, and the optical transit on the time resolution
-using a sampling calorimeter with a $(1.7\mathrm{cm})^{3}$ LYSO cube as active
+using a sampling calorimeter with a (1.7~cm)$^{3}$ LYSO cube as active
 element. The LYSO crystal is wrapped in Tyvek and attached to the Hamamatsu
 R3809 MCP-PMT with optical coupler~\cite{grease}, which is used as a time reference. A Photek 240
 MCP-PMT is placed upstream of the calorimeter and is used to measure the
@@ -278,21 +279,19 @@ are shown in Figure~\ref{fig:LYSOSamplingCaloSetup}.
 \includegraphics[width=0.45\textwidth]{figs/LYSOSamplingCaloSetupSchematic} 
 \includegraphics[width=0.45\textwidth]{figs/LYSOSamplingCaloSetupPhoto} 
 \caption{ A schematic diagram of the experimental setup for the
-time of flight measurement using the LYSO sampling calorimeter, 
-along with a photograph of the experimental setup. } 
+time of flight measurement using the LYSO sampling calorimeter is shown
+on the left, along with a photograph of the experimental setup shown on the right. } 
 \label{fig:LYSOSamplingCaloSetup}
 \end{figure}
 
 A plastic scintillator, approximately $2$~mm by $2$~mm in cross sectional area
 and placed upstream of the reference time detector, is used to trigger the DAQ
-readout on the DRS waveform digitizer and ensures that any time of flight
-measurement is constrained to within a $2$~mm region, which limits the time
-jitter due to the geometry to about $12$~ps, assuming that the speed of light
-inside LYSO is about $\mathrm{c}/1.8$. Electron events are identified by
+readout on the DRS waveform digitizer and ensures that the electron beam is
+constrained to within a $2\times 2$~mm$^2$ region. Electron events are identified by
 requiring a signal with amplitude larger than $10$~mV in the Cherenkov counter.
 Finally, large lead bricks are placed upstream of the Hamamatsu R3809 MCP-PMT,
 out of the path of the beam. These shield the photodetector from stray particles
-produced in events where an electromagnetic shower occurrs upstream of the lead
+produced in events where an electromagnetic shower occurs upstream of the lead
 radiator. Such stray shower particles yield very fast signals which can
 significantly contaminate the scintillation signal. Using the same experimental
 setup without the LYSO active element in place, we find that stray shower type
@@ -352,10 +351,10 @@ and fitted to the sum of a $1/\sqrt{E}$ term and a constant term. Note that the 
 \end{figure}
 
 Given that we measure the contribution to the time resolution of the
-photodetector and the DAQ electronics to be about $20$~ps, we infer that the
+photodetector and the DAQ electronics to be about $20$~ps, using the results fromthe 32 GeV electron beam, we infer that the
 combined contribution to the time resolution from the shower profile
 fluctuations, the scintillation mechanism, and the optical transit inside the
-LYSO cube is $27$~ps. In future studies, we intend to further separate these
+LYSO cube is below $27$~ps. In future studies, we intend to further separate these
 effects, in order to better isolate the impact of each of these components.
 
 \subsection{Timing Studies of the LYSO-Tungsten Shashlik Calorimeter}
@@ -366,12 +365,21 @@ system~\cite{Contardo:1605208}. We compare the time resolution performance for
 two alternative optical transport schemes. 
 
 We begin with a scheme where scintillation light is collected by WLS fibers that
-pass through a set of four holes in the LYSO and tungsten layers. A schematic
-diagram and a photograph showing this setup are shown in
-Figure~\ref{fig:ShashlikFiberSetup}. MCP-PMT's produced by Hamamatsu (R3809) are
-used to collect the scintillation light, while a Photek 240 MCP-PMT is used as a
-reference time detector. 
+pass through a set of four holes in the LYSO and tungsten layers. In 
+Figure~\ref{fig:ShashlikDiagram}, a shashlik cell and the light extraction 
+scheme is illustrated. A schematic diagram and a photograph showing this experimental
+setup are shown in Figure~\ref{fig:ShashlikFiberSetup}. MCP-PMT's produced by 
+Hamamatsu (R3809) are used to collect the scintillation light, while a Photek 240 
+MCP-PMT is used as a reference time detector. 
 
+\begin{figure}[H] \centering
+\includegraphics[width=0.6\textwidth]{figs/Shashlik_Design.pdf} 
+\caption{ The shashlik configuration based upon interleaved W and LYSO layers. 
+Twenty-nine LYSO crystals and twenty-eight W plates comprise the module. 
+Four WLS quartz capillaries are used to read out the scintillation light from the 
+tiles. } 
+\label{fig:ShashlikDiagram}
+\end{figure}
 
 \begin{figure}[H] \centering
 \includegraphics[width=0.45\textwidth]{figs/ShashlikFiberSetupSchematic} 
@@ -531,7 +539,7 @@ collection efficiency is achieved.
 \section{Summary}
 
 In this article we have described studies characterizing the timing performance
-of LYSO-based calorimeters. Using a $(1.7\mathrm{ cm})^{3}$ LYSO crystal that
+of LYSO-based calorimeters. Using a (1.7~cm)$^{3}$ LYSO crystal that
 samples the electromagnetic showers created by electrons of various energies
 ranging from $4$~GeV to $32$~GeV at about $4.5$~$X_{0}$, we inferred that the
 contribution to the time resolution from event-by-event fluctuations of the
@@ -567,8 +575,9 @@ ultimate limitation in resolution resulting from optical transit fluctuations.
 
 \begin{figure}[H] \centering
 \includegraphics[width=0.55\textwidth]{figs/TimeResolutionVsEnergy_ShashlikDSB1FiberAndCube} 
-\caption{Comparison of time resolutions obtained with the $(1.7$~cm$)^{3}$ LYSO cube (blue), and the LYSO-tungsten shashlik calorimeter with light extracted using DSB1 fibers (red). The x-axis in this figure displays the amplitude of the signal as measured by the DRS4 board. Attenuators
- have been used to extend the dynamic range of the DRS waveform digitizer. }
+\caption{Comparison of time resolutions obtained with the $(1.7$~cm$)^{3}$ LYSO cube (blue), 
+and the LYSO-tungsten shashlik calorimeter with light extracted using DSB1 fibers (red). 
+Attenuators have been used to extend the dynamic range of theDRS4 waveform digitizer. The x-axis in this figure displays the amplitude of thesignal, corrected for the attenuation factors. }
 \label{fig:ShashlikFiberAndCubeTOF}
 \end{figure}
 
