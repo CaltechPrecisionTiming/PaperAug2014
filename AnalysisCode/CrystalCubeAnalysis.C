@@ -161,7 +161,7 @@ void MakeTimeResolutionPlot(string filename, string plotname, int energy, bool p
     tex->SetTextSize(0.040);
     tex->SetTextFont(42);
     tex->SetTextColor(kBlack);
-    tex->DrawLatex(0.53, 0.80, Form("Resolution = %.0f %s",100*fitter->GetParameter(2)/fitter->GetParameter(1),"%"));
+    tex->DrawLatex(0.44, 0.80, Form("Resolution (#sigma/Mean) = %.0f %s",100*fitter->GetParameter(2)/fitter->GetParameter(1),"%"));
     
     c->SaveAs( Form("%s_energy.gif", plotname.c_str()) );
     c->SaveAs( Form("%s_energy.pdf", plotname.c_str()) );
@@ -234,10 +234,10 @@ void MakeTimeResolutionVsEnergyPlot() {
 
 void CrystalCubeAnalysis() {
 
-  // MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_aug_run_070.ana.root","TOF_Electron_LYSOCube_4GeV",4,false);
-  // MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_aug_run_069.ana.root","TOF_Electron_LYSOCube_8GeV", 8,false);
-  // MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_aug_run_064.ana.root","TOF_Electron_LYSOCube_16GeV",16,false);
+  MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_aug_run_070.ana.root","TOF_Electron_LYSOCube_4GeV",4,false);
+  MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_aug_run_069.ana.root","TOF_Electron_LYSOCube_8GeV", 8,false);
+  MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_aug_run_064.ana.root","TOF_Electron_LYSOCube_16GeV",16,false);
   MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_aug_run_065-068.ana.root","TOF_Electron_LYSOCube_32GeV",32,true);
   
-  //MakeTimeResolutionVsEnergyPlot();
+  MakeTimeResolutionVsEnergyPlot();
 }

@@ -128,7 +128,12 @@ void MakeTimeResolutionPlot(string filename, string plotname, int energy, int ru
   // Touch up and save
   TCanvas * c = new TCanvas("c","c",600,600);
   TF1 *f1 = new TF1("f1","gaus",dt->GetMean()-2*fabs(dt->GetRMS()),dt->GetMean()+2*fabs(dt->GetRMS()));
-  dt->SetAxisRange(dt->GetMean()-3.0*fabs(dt->GetRMS()),dt->GetMean()+3.0*fabs(dt->GetRMS()),"X");
+  //dt->SetAxisRange(dt->GetMean()-3.0*fabs(dt->GetRMS()),dt->GetMean()+3.0*fabs(dt->GetRMS()),"X");
+  if (energy == 32 || energy == 16) {
+    dt->SetAxisRange(dt->GetMean()-0.6,dt->GetMean()+0.6,"X");
+  } else {
+    dt->SetAxisRange(1.4-0.6,1.4+0.6,"X");
+  }
   dt->SetTitle("");
   dt->GetXaxis()->SetTitle("#Delta t [ns]");
   dt->GetYaxis()->SetTitle("Number of Events");
@@ -224,9 +229,9 @@ void ShashlikSideReadoutAnalysis() {
   //*************************************
   //Best Results Here for Paper
   //*************************************
-  // MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_may_run_137.ana.root","TOF_ShashlikSideReadout_Electron_8GeV",8,137);
-  // MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_may_run_140.ana.root","TOF_ShashlikSideReadout_Electron_16GeV",16,140);  
-  // MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_may_run_141.ana.root","TOF_ShashlikSideReadout_Electron_32GeV",32,141);
+  MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_may_run_137.ana.root","TOF_ShashlikSideReadout_Electron_8GeV",8,137);
+  MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_may_run_140.ana.root","TOF_ShashlikSideReadout_Electron_16GeV",16,140);  
+  MakeTimeResolutionPlot("/afs/cern.ch/work/s/sixie/public/Phase2Upgrade/Timing/cpt-aug-2014/cpt_may_run_141.ana.root","TOF_ShashlikSideReadout_Electron_32GeV",32,141);
   MakeTimeResolutionVsEnergyPlot();
 
 
