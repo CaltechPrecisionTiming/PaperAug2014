@@ -102,7 +102,7 @@ system has a characteristic time constant $t_D$. Each of these time intervals wi
 
 
 \begin{figure}[h] \centering
-\includegraphics[width=0.85\textwidth]{figs/ScintillatorTiming_v3}
+\includegraphics[width=0.85\textwidth]{figs/ScintillatorTiming_v4}
 \caption{\small Timing measurement schematic breakdown using a monolithic, large scintillating crystal. 
 The incident particle impinges on the crystal face from the left. The characteristic time intervals  are discussed 
 in the text.}
@@ -154,32 +154,33 @@ identification.
 
 \section{Event Selection and Data Analysis}
 
-Our primary target is to reconstruct the time of flight of beam particles between different detector elements.
-Different time reconstruction algorithms are used for different detector elements, and all involve
-the assignment of a timestamp using specific features of each corresponding
-signal pulse. The signal pulse for the reference time detector is very
-sharp and symmetric around its maximum amplitude, as shown in
-Figure~\ref{fig:PulseShapes}. Hence for the reference detector we determine
-the time position of the pulse peak by fit a Gaussian function to the peak of
-the pulse, using three sampling points before the pulse maximum and four
-sampling points after {\bf in the plot it shows 3 points after the peak as well -check code}. 
-The best fit mean parameter of the Gaussian function is
-assigned as the timestamp $t_{0}$. The signal pulse for the downstream time
-measurement is the result of scintillation light, and exhibits a
-fast rising edge and a significantly slower decay. Therefore, we
-assign the timestamp $t_{1}$ using a constant fraction of the rising edge. A
-linear function is fit to the sampling points between $10\%$ and $60\%$ of the
-pulse maximum and the timestamp is assigned as the time at which the best-fit
-linear function rises to $20\%$ of the pulse maximum. Examples of fits performed
-to assign a time stamp from each pulse are shown in Figure~\ref{fig:PulseFits}.
- {\bf  between figure 4 left and 4 right
-am I suppose to link the x-axis? the explanation of the analysis is opaque.}
+Our primary target is to reconstruct the time of flight of beam particles between
+different detector elements. Different time reconstruction algorithms are used
+for different detector elements, and all involve the assignment of a timestamp
+using specific features of each corresponding signal pulse. The signal pulse for
+the reference time detector is very sharp and symmetric around its maximum
+amplitude, as shown in Figure~\ref{fig:PulseShapes}. Hence for the reference
+detector we determine the time position of the pulse peak by fit a Gaussian
+function to the peak of the pulse, using three sampling points before the pulse
+maximum and four sampling points after. The fitted mean parameter of the
+Gaussian function is assigned as the timestamp $t_{0}$. The signal pulse for the
+downstream time measurement is the result of scintillation light, and exhibits a
+fast rising edge and a significantly slower decay. Therefore, we assign the
+timestamp $t_{1}$ using a constant fraction of the rising edge. A linear
+function is fit to the sampling points between $10\%$ and $60\%$ of the pulse
+maximum and the timestamp is assigned as the time at which the fitted linear
+function rises to $20\%$ of the pulse maximum. Examples of fits performed to
+assign a time stamp from each pulse are shown in Figure~\ref{fig:PulseFits}. The
+impact from the choice of the functional forms is studied by using a set of
+alternative functions in the fits, and choosing the one that results in the best
+time resolution. Among the functions that we tested, the difference between the
+best and worst performing functions was about 8~psec.
 
 \begin{figure}[h] \centering
 \includegraphics[width=0.45\textwidth]{figs/RefPulse} 
 \includegraphics[width=0.45\textwidth]{figs/run064_event506} 
 \caption{\small Sample pulses as digitized by the DRS4 board. 
-On the left a  pulse is shown from the reference Photek 240 MCP-PMT, 
+On the left a  pulse is shown from the reference Hamamatsu R3809 MCP-PMT, 
 and on the right is a pulse from the Hamamatsu R3809 MCP-PMT
 optically coupled to a (1.7~cm)$^{3}$ LYSO crystal cube
 recorded using  8 GeV electron beam.} 
@@ -187,21 +188,22 @@ recorded using  8 GeV electron beam.}
 \end{figure}
 
 Event selection and pulse cleaning procedures are used to eliminate abnormal
-pulses in the readout. {\bf must mention these explicitly or give the reference of the other paper if they are the same}.
-Large signals above 500 mV are rejected because they
-saturate the DRS4 inputs. Only pulses with amplitude larger than 20 mV are used
-for time of flight measurements, in order to reduce the impact of noise from the
-DRS waveform digitizer DAQ system. Events containing more than one pulse within
-the $200$~ns readout window are not used. {\bf Attenuators have been used to extend the dynamic range of the DRS4 waveform digitizer when needed.Can you elaborate a bit on this here as I removed this sentence from the caption of the lasy figure...}
+pulses in the readout, as described in~\cite{MCPFastCaloNIMA}. Large signals
+above 500 mV are rejected because they saturate the DRS4 inputs. Only pulses
+with amplitude larger than 20 mV are used for time of flight measurements, in
+order to reduce the impact of noise from the DRS waveform digitizer DAQ system.
+Events containing more than one pulse within the $200$~ns readout window are not
+used. Attenuators were used to extend the dynamic range of the DRS4
+waveform digitizer in cases when a large fraction of signal pulses are saturated.
 
 \begin{figure}[h] \centering
-\includegraphics[width=0.45\textwidth]{figs/Reference_Pulse_GausFit.pdf} 
-\includegraphics[width=0.45\textwidth]{figs/LYSOCube_Pulse_RisingEdgeFit.pdf} 
+\includegraphics[width=0.45\textwidth]{figs/Reference_Pulse_GausFit_057_ev322.pdf} 
+\includegraphics[width=0.45\textwidth]{figs/LYSOCube_Pulse_RisingEdgeFit_057_ev313.pdf} 
 \caption{\small Sample fits used to assign timestamps to digitized MCP-PMT pulses. 
-On the left is a pulse from the reference Photek 240 MCP-PMT, and
+On the left is a pulse from the reference Hamamatsu R3809 MCP-PMT, and
 on the right is a pulse from the Hamamatsu R3809 MCP-PMT
 optically coupled to a (1.7~cm)$^{3}$  LYSO crystal
-recorded during an 8 GeV electron run. {\bf these ara unaceeptable plots in .jpg that need to be redone for submission}.}
+recorded during an 8 GeV electron run.}
 \label{fig:PulseFits}
 \end{figure}
 
@@ -332,29 +334,27 @@ experimental setup. }
 %In this setup the wavelength shifting mechanism in the fibers affects the rise
 %time and time jitter of the final signal pulse.
  %We investigate this effect in
-%greater detail by 
-We compare the signal pulses obtained using two different types
-of WLS fiber in the same LYSO-tungsten shashlik calorimeter. In
-Figure~\ref{fig:FiberPulseComparison} (a) and (b) and we show the pulse shapes averaged over a
-few hundred events obtained using DSB1 fibers~\cite{Albrecht} and Y11 fibers,
-plotted in blue and red respectively. We find that the rise time of the pulse
-obtained using the DSB1 fibers, about $2.4$~ns, is significantly faster than the
-rise time of the pulse obtained using the Y11 fibers, which is about $7.1$~ns.
-This indicates that different fibers with pulse decay times varying according to the dyes and other 
-characteristics of the fiber,  affect the rise time and time measurement resolution. To  optimize
-the time resolution of this type of calorimeter the DSB1 fiber provides a better choice than Y11 if only 
-this parameter is considered.  The  signal rise times we observe are comparable to the measured decay times 
-of the corresponding WLS fibers~\cite{Albrecht}.
-
-compared with the average pulse shape
-obtained from direct optical coupling of the photodector to the edge of one of
-the LYSO tiles, plotted in green. 
+%greater detail by  We compare the signal pulses obtained using two different
+ types of WLS fiber in the same LYSO-tungsten shashlik calorimeter. In
+ Figure~\ref{fig:FiberPulseComparison} (a) and (b) and we show the pulse shapes
+ averaged over a few hundred events obtained using DSB1 fibers~\cite{Albrecht}
+ and Y11 fibers, plotted in blue and red respectively. We find that the rise
+ time of the pulse obtained using the DSB1 fibers, about $2.4$~ns, is
+ significantly faster than the rise time of the pulse obtained using the Y11
+ fibers, which is about $7.1$~ns. To optimize the time resolution of this type
+ of calorimeter the DSB1 fiber provides a better choice than Y11 if only this
+ parameter is considered. The signal rise times we observe are comparable to the
+ measured decay times of the corresponding WLS fibers~\cite{Albrecht}. 
+ 
+% compared
+% with the average pulse shape obtained from direct optical coupling of the
+% photodetector to the edge of one of the LYSO tiles, plotted in green. %
 
 
 \begin{figure}[H] \centering
-\includegraphics[width=0.32\textwidth]{figs/FiberPulsesY11DSB1} 
-\includegraphics[width=0.32\textwidth]{figs/FiberPulsesZoomY11DSB1} 
-\includegraphics[width=0.32\textwidth]{figs/FiberPulsesZoomDirectDSB1} 
+%\includegraphics[width=0.32\textwidth]{figs/FiberPulsesY11DSB1} %
+%\includegraphics[width=0.32\textwidth]{figs/FiberPulsesZoomY11DSB1} %
+%\includegraphics[width=0.32\textwidth]{figs/FiberPulsesZoomDirectDSB1} %
 \caption{\small (a) Pulse shapes digitized by the DRS4 board and averaged over several hundred events 
 obtained from the LYSO-tungsten shashlik calorimeter with light extracted using
 DSB1 (blue) and Y11 (red) WLS fibers. 
@@ -377,7 +377,7 @@ could be made due to a misconfiguration of the upstream Cherenkov counter, so th
 Time of flight distributions, fitted to gaussian functions,
 are shown in Figure~\ref{fig:ShashlikFiberTOF}, and the 
 $\sigma$ parameter of the gaussian fit is plotted as a function of the
-beam energy in Figure~\ref{fig:ShashlikFiberTOFResolutionVsEnergy}.
+beam energy in Figure~\ref{fig:ShashlikSideReadoutTOFResolutionVsEnergy}.
 We find that the dependence of the time resolution on
 beam energy follows a $1/\sqrt{E}$ functional form, indicating
 that the current calorimeter setup remains in the photostatistics
@@ -388,22 +388,24 @@ efficiency is increased.
 
 
 \begin{figure}[H] \centering
-\includegraphics[width=0.45\textwidth]{figs/TOF_Electron_LYSOCube_32GeV_energy1} 
-\includegraphics[width=0.45\textwidth]{figs/TOF_ShashlikDSB1Fiber_Electron_32GeV_energy1} 
-\caption{ (Left) Histogram of the pulse integral which is proportional to the total collected charge is shown for events recorded using
-the LYSO cube sampling calorimeter for a $32$~GeV electron beam. (Right) Histogram of the pulse integral for events recorded using
-the LYSO-tungsten shashlik calorimeter using DSB1 fibers, for 
-a $32$~GeV electron beam. The background is included due to a misconfiguration of the  Cherenkov counter. } 
+\includegraphics[width=0.45\textwidth]{figs/TOF_Electron_LYSOCube_32GeV_energy} 
+\includegraphics[width=0.45\textwidth]{figs/TOF_ShashlikDSB1Fiber_Electron_32GeV_energy} 
+\caption{ (Left) Histogram of the pulse integral which is proportional to the
+total collected charge is shown for events recorded using the LYSO cube sampling
+calorimeter for a $32$~GeV electron beam. (Right) Histogram of the pulse
+integral for events recorded using the LYSO-tungsten shashlik calorimeter using
+DSB1 fibers, for a $32$~GeV electron beam. The background is included due to a
+misconfiguration of the Cherenkov counter. } 
 \label{fig:ShashlikFiberEnergy32GeV}
 \end{figure}
 
 
 
 \begin{figure}[H] \centering
-\includegraphics[width=0.23\textwidth]{figs/TOF_ShashlikDSB1Fiber_Electron_4GeV-2} 
-\includegraphics[width=0.23\textwidth]{figs/TOF_ShashlikDSB1Fiber_Electron_8GeV-2} 
-\includegraphics[width=0.23\textwidth]{figs/TOF_ShashlikDSB1Fiber_Electron_16GeV-2} 
-\includegraphics[width=0.23\textwidth]{figs/TOF_ShashlikDSB1Fiber_Electron_32GeV-2} 
+\includegraphics[width=0.23\textwidth]{figs/TOF_ShashlikDSB1Fiber_Electron_4GeV} 
+\includegraphics[width=0.23\textwidth]{figs/TOF_ShashlikDSB1Fiber_Electron_8GeV} 
+\includegraphics[width=0.23\textwidth]{figs/TOF_ShashlikDSB1Fiber_Electron_16GeV} 
+\includegraphics[width=0.23\textwidth]{figs/TOF_ShashlikDSB1Fiber_Electron_32GeV} 
 \caption{\small Time of flight distributions for the LYSO-tungsten shashlik calorimeter
 using DSB1 fibers for electron beams with varying beam energies.} 
 \label{fig:ShashlikFiberTOF}
@@ -455,9 +457,9 @@ a $1/\sqrt{E}$ term and a constant term, we find a constant term of about
 $30$~ps. 
 
 \begin{figure}[H] \centering
-\includegraphics[width=0.32\textwidth]{figs/TOF_ShashlikSideReadout_Electron_8GeV-1} 
-\includegraphics[width=0.32\textwidth]{figs/TOF_ShashlikSideReadout_Electron_16GeV-1} 
-\includegraphics[width=0.32\textwidth]{figs/TOF_ShashlikSideReadout_Electron_32GeV-1} 
+\includegraphics[width=0.32\textwidth]{figs/TOF_ShashlikSideReadout_Electron_8GeV} 
+\includegraphics[width=0.32\textwidth]{figs/TOF_ShashlikSideReadout_Electron_16GeV} 
+\includegraphics[width=0.32\textwidth]{figs/TOF_ShashlikSideReadout_Electron_32GeV} 
 \caption{ Time of flight distributions for the LYSO-tungsten shashlik calorimeter
 with signal extracted from the edges of two LYSO layers. } 
 \label{fig:ShashlikSideReadoutTOF}
@@ -500,7 +502,7 @@ samples the electromagnetic showers created by electrons of various energies
 ranging from $4$~GeV to $32$~GeV at about $4.5$~$X_{0}$, we infer that the
 contribution to the time resolution from event-by-event fluctuations of the
 shower profile, the scintillation process, and the light propagation is less than
-$30$~ps. Studies using different  wavelenght shifting fibers in a LYSO-tungsten shashlik calorimeter 
+$30$~ps. Studies using different  wavelength shifting fibers in a LYSO-tungsten shashlik calorimeter 
 demonstrates that the choice of the fiber affects the timing performance. Besides the absorption and re-emission
 processes in the fibers, we found that another important factor influencing
 the timing performance is the light extraction efficiency. Using DSB1 fibers, despite being photostatistics limited, we
@@ -513,15 +515,19 @@ time resolution of $55$~ps. The result  indicates  that such a
 calorimeter design can achieve the $30$~ps time resolution benchmark achieved with the LYSO cube
 provided some improvement to the light collection efficiency is achieved.
 
-In comparing results using different light extraction schemes, we find that at a given light yield the 
-the time resolution depends significantly on the light propagation fluctuations. As the light yield increases 
-the dependence on the  light propagation fluctuations is reduced.  The effect can be seen in the summary Figure~\ref{fig:ShashlikFiberAndCubeTOF} where we show the dependence
-of the time resolution on the average pulse height for the shashlik cell with light extracted through the
-DSB1 fibers and for the sampling calorimeter with the  LYSO cube. 
-For the same average pulse height of 500 mV,  the LYSO cube time resolution is about half of the shashlik using
-the DSB1 fibers which have also twice the rise time. As the pulse height increases the time resolution improves. 
-Extrapolating to the regime of very large light yield, we should be able to reach asymptotically the best resolution 
-without limitations from the light propagation fluctuations. 
+In comparing results using different light extraction schemes, we find that at a
+given light yield the time resolution depends significantly on the light
+propagation fluctuations. As the light yield increases the dependence on the
+light propagation fluctuations is reduced. The effect can be seen in the summary
+Figure~\ref{fig:ShashlikFiberAndCubeTOF} where we show the dependence of the
+time resolution on the average pulse height for the shashlik cell with light
+extracted through the DSB1 fibers and for the sampling calorimeter with the LYSO
+cube. For the same average pulse height of 500 mV, the LYSO cube time resolution
+is about half of the shashlik using the DSB1 fibers which have also twice the
+rise time. As the pulse height increases the time resolution improves.
+Extrapolating to the regime of very large light yield, we should be able to
+reach asymptotically the best resolution without limitations from the light
+propagation fluctuations. 
 
 
 \begin{figure}[H] \centering
