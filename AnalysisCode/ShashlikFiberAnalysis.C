@@ -256,7 +256,8 @@ void MakeTimeResolutionPlot(string filename, string plotname, int energy, int is
     tex->SetTextSize(0.040);
     tex->SetTextFont(42);
     tex->SetTextColor(kBlack);
-    tex->DrawLatex(0.13, 0.80, Form("Resolution = %.1f %s",100*fitter->GetParameter(2)/fitter->GetParameter(1), "%"));
+    tex->DrawLatex(0.70, 0.83, Form("#sigma/#mu = %.1f %s",100*fitter->GetParameter(2)/fitter->GetParameter(1),"%"));
+    //tex->DrawLatex(0.13, 0.80, Form("Resolution = %.1f %s",100*fitter->GetParameter(2)/fitter->GetParameter(1), "%"));
     //tex->DrawLatex(0.53, 0.75, Form("RMS/Mean=%.1f %s",100*histIntegral->GetRMS()/histIntegral->GetMean(),"%"));
 
     c->SaveAs( Form("%s_energy.gif", plotname.c_str()) );

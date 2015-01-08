@@ -161,7 +161,7 @@ void MakeTimeResolutionPlot(string filename, string plotname, int energy, bool p
     tex->SetTextSize(0.040);
     tex->SetTextFont(42);
     tex->SetTextColor(kBlack);
-    tex->DrawLatex(0.44, 0.80, Form("Resolution (#sigma/Mean) = %.0f %s",100*fitter->GetParameter(2)/fitter->GetParameter(1),"%"));
+    tex->DrawLatex(0.70, 0.83, Form("#sigma/#mu = %.0f %s",100*fitter->GetParameter(2)/fitter->GetParameter(1),"%"));
     
     c->SaveAs( Form("%s_energy.gif", plotname.c_str()) );
     c->SaveAs( Form("%s_energy.pdf", plotname.c_str()) );
