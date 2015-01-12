@@ -1,6 +1,11 @@
 
 \documentclass[12pt]{article}
-\usepackage[hmargin=1.5cm,vmargin=1.5cm]{geometry}
+\usepackage{lineno}
+
+\linenumbers
+
+
+%\usepackage[hmargin=1.5cm,vmargin=1.5cm]{geometry}
 
 \usepackage[affil-it]{authblk}
 \usepackage[percent]{overpic}
@@ -45,8 +50,8 @@
 \begin{document}
 
 \maketitle
-\abstract{We present studies on the timing performance and characterization of the time resolution of LYSO-based
-calorimeters.  We demonstrate time resolution of $30$~ps is achievable for a particular design. We  discuss  precision timing calorimetry as a tool for  mitigation  of physics object performace degradation effects due to the large number of simulateneous interactions in the high luminosity  environment foreseen at the Large Hardon Collider. }
+\abstract{We present Test Beam studies and results on the timing performance and characterization of the time resolution of LYSO-based
+calorimeters.  We demonstrate time resolution of $30$~ps is achievable for a particular design. We  discuss  precision timing calorimetry as a tool for  mitigation  of physics object performance degradation effects due to the large number of simultaneous interactions in the high luminosity  environment foreseen at the Large Hardon Collider. }
 
 
 
@@ -64,7 +69,7 @@ an average of $140$ to $200$. The large amount of pileup increases the likelihoo
 confusion in the reconstruction of events of interest, due to the contamination from 
 particles produced in different pileup interactions. The ability to discriminate between 
 jets produced in the events of interests -- especially those associated with the vector 
-aboson fusion processes -- and jets produced by pileup interactions will be degraded, 
+boson fusion processes -- and jets produced by pileup interactions will be degraded, 
 the missing transverse energy resolution will deteriorate, and several other physics 
 objects performance metrics will suffer.
 
@@ -224,7 +229,7 @@ recorded during an 8 GeV electron run.}
 \section{Timing in LYSO-based Calorimeters}
 The timing measurement in 
 LYSO-based calorimeters is driven by three main factors  -- other  than the intrinsic transit 
-time of the photodector itself and the DAQ electronics : a) the shower profile fluctuations,  
+time of the photodetector itself and the DAQ electronics : a) the shower profile fluctuations,  
 b) the scintillation time, and c) the light propagation time. Stochastic processes during the
 development of an electromagnetic shower affect the time of observed signals, as
 both the transverse size and the depth of the shower can fluctuate event-by-event. 
@@ -317,7 +322,7 @@ fluctuations, the scintillation mechanism, and the light propagation time inside
 LYSO cube is about $27$~ps.  
 
 \subsection{Timing Studies of the LYSO-Tungsten Shashlik Calorimeter}
-\subsubsection{Wavelength (WLS) shifting fibers readout (Y11, DSB1)}
+\subsubsection{Wavelength shifting fibers readout (WLS Y11 \& DSB1)}
 We study the time resolution of a LYSO-tungsten Shashlik calorimeter, one of the
 proposed choices for the Phase 2 upgrade of the CMS endcap calorimeter
 system~\cite{Contardo:1605208}. We compare the time resolution performance for
@@ -353,7 +358,8 @@ experimental setup. }
 %In this setup the wavelength shifting mechanism in the fibers affects the rise
 %time and time jitter of the final signal pulse.
  %We investigate this effect in
-%greater detail by  We compare the signal pulses obtained using two different
+%greater detail by 
+ We compare the signal pulses obtained using two different
  types of WLS fiber in the same LYSO-tungsten shashlik calorimeter. In
  Figure~\ref{fig:FiberPulseComparison} (a) and (b) and we show the pulse shapes
  averaged over a few hundred events obtained using DSB1 fibers~\cite{Albrecht}
@@ -367,17 +373,21 @@ experimental setup. }
  
 % compared
 % with the average pulse shape obtained from direct optical coupling of the
-% photodetector to the edge of one of the LYSO tiles, plotted in green. %
+% photodetector to the edge of one of the LYSO tiles, plotted in green. 
+%
 
 
 \begin{figure}[H] \centering
-%\includegraphics[width=0.32\textwidth]{figs/FiberPulsesY11DSB1} %
-%\includegraphics[width=0.32\textwidth]{figs/FiberPulsesZoomY11DSB1} %
-%\includegraphics[width=0.32\textwidth]{figs/FiberPulsesZoomDirectDSB1} %
+%\includegraphics[width=0.32\textwidth]{figs/FiberPulsesY11DSB1} 
+%
+\includegraphics[width=0.48\textwidth]{figs/FiberPulsesZoomY11DSB1} 
+%
+\includegraphics[width=0.48\textwidth]{figs/FiberPulsesZoomDirectDSB1} 
+%
 \caption{\small (a) Pulse shapes digitized by the DRS4 board and averaged over several hundred events 
 obtained from the LYSO-tungsten shashlik calorimeter with light extracted using
 DSB1 (blue) and Y11 (red) WLS fibers. 
-(b) A zoomed-in version of the figure (a). (c)  DSB1(blue) shashlik average light pulse shape compared with 
+ (b)  DSB1(blue) shashlik average light pulse shape compared with 
 the averaged pulse shape obtained from direct optical coupling of the photodetector to one edge of  a LYSO tile in the shashlik calorimeter.  (green)} 
 \label{fig:FiberPulseComparison}
 \end{figure}
@@ -531,8 +541,8 @@ In a setup where  the scintillation light from the LYSO-tungsten
 shashlik calorimeter is extracted via the edges of two LYSO layers, thereby
 removing completely the wavelength shifting mechanism and long light propagation distance, 
 we achieve a best time resolution of $55$~ps. The result  indicates  that such a
-calorimeter design can achieve the $30$~ps time resolution benchmark achieved with the LYSO cube
-provided some improvement to the light collection efficiency is achieved.
+calorimeter design can achieve the $30$~ps time resolution benchmark obtained with the LYSO cube
+provided some improvement to the light collection efficiency. 
 
 In comparing results using different light extraction schemes, we find that at a
 given light yield the time resolution depends significantly on the light
@@ -560,16 +570,17 @@ signal, corrected for the attenuation factors. }
 
 In summary, using a LYSO-based calorimeter and different light propagation experimental setups 
 we obtain about $30$~ps resolution time measurement for the maximum light yield achieved. 
-As a follow-up we will investigate the time resolution limitations in the limit of very large light yield, 
+As a follow-up we will investigate the time resolution in the limit of very large light yield, 
 and attempt to improve the light collection efficiency in these types of detectors.
 
-\section{Acknowledgements} We would like to thank Erik Ramberg and Sergey Los
-for their support of our work, and Aria Soha and the FTBF test beam facility for
-the good beam delivery and control. We thank Randy Ruchti for providing us with
+\section{Acknowledgements} We would like to thank Erik Ramberg and Sergey Los for their help and support of this work, and Aria Soha and the FTBF test beam facility for
+the beam delivery and control. We thank Randy Ruchti for providing us with
 the DSB1 fibers used in the measurements, and Eileen Hahn for the high quality
-work in polishing the fibers. Thanks to Ewa Skup and Geoff Savage for help with
-operation of Cherenkov counters, and to Todd Nobel for organizing and providing
+work in polishing the fibers. We would also like to thank Ewa Skup and Geoff Savage for help with
+operation of the Cherenkov counters, and to Todd Nobel for organizing and providing
 supporting equipment at FTBF.
+
+This work is supported by funding from Fermi Research Alliance, LLC under Contract No. DE-AC02-07CH11359 with the United States Department of Energy and from California Institute of Technology High Energy Physics under Contract DE-SC0011925 with the United States Department of Energy. 
 
 
 \bibliography{FastTimingPaperAug2014}{}
